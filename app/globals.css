@@ -101,6 +101,24 @@ body {
   pointer-events: none;
 }
 
+/* Circuit grid is layered via a pseudo-element, never the element's own
+   `background`, so it can never clobber .rg-royal-section's base gradient
+   (both properties set `background-image` — same-specificity source order
+   would otherwise let whichever class comes later in the stylesheet win). */
+.rg-circuit {
+  position: relative;
+}
+
+.rg-circuit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(201, 162, 74, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 74, 0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
 /* -------------------------------------------------------------------- */
 /* Card system — real depth, not flat boxes                              */
 /* -------------------------------------------------------------------- */
@@ -232,9 +250,138 @@ body {
   50% { background-position: 100% 50%; }
 }
 
+/* -------------------------------------------------------------------- */
+/* Holographic HUD system — Wakanda-console / Tron-grid, not flat cards  */
+/* -------------------------------------------------------------------- */
+
+/* Scan-line sweep — a light band drifting down a dark panel, like a
+   console reading itself. */
+.rg-scanline {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rg-scanline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(230, 200, 116, 0.16) 45%,
+    rgba(123, 79, 224, 0.22) 55%,
+    transparent
+  );
+  animation: rg-scan 7s linear infinite;
+}
+
+@keyframes rg-scan {
+  0% { transform: translateY(-160px); }
+  100% { transform: translateY(110%); }
+}
+
+/* HUD corner brackets — targeting-reticle framing on a panel. */
+.rg-hud-frame {
+  position: relative;
+}
+
+.rg-hud-frame::before,
+.rg-hud-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-gold);
+  pointer-events: none;
+}
+
+.rg-hud-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-gold);
+  border-left: 2px solid var(--color-gold);
+}
+
+.rg-hud-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-gold);
+  border-right: 2px solid var(--color-gold);
+}
+
+/* Glass HUD panel — translucent, glowing edge, backdrop blur. */
+.rg-glass {
+  position: relative;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(201, 162, 74, 0.4);
+  background: linear-gradient(160deg, rgba(123, 79, 224, 0.14), rgba(10, 6, 18, 0.55));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(230, 200, 116, 0.08), 0 20px 60px -20px rgba(123, 79, 224, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Radar-ping node — expanding rings pulsing outward from a core dot,
+   like a live system status indicator on a HUD. */
+.rg-ping {
+  position: relative;
+}
+
+.rg-ping::before,
+.rg-ping::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-gold);
+  opacity: 0;
+  animation: rg-ping-ring 2.6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+.rg-ping::after {
+  animation-delay: 1.3s;
+}
+
+@keyframes rg-ping-ring {
+  0% { transform: scale(0.7); opacity: 0.9; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+/* Angular hex badge — a faceted, tech-console shape instead of a rounded
+   square, for signature moments (pipeline nodes, flagship markers). */
+.rg-hex {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
+
+/* Typewriter-console readout — a value that appears to type itself in,
+   used sparingly on a single status line. */
+@keyframes rg-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.4; }
+  94% { opacity: 1; }
+}
+
+.rg-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #4ade80;
+  box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.7);
+  animation: rg-flicker 3.5s steps(1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rg-metallic,
-  .rg-metallic-dark {
+  .rg-metallic-dark,
+  .rg-scanline::after,
+  .rg-ping::before,
+  .rg-ping::after,
+  .rg-live-dot {
     animation: none;
   }
   .rg-card:hover,

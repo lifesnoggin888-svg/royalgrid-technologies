@@ -8,7 +8,8 @@ export default function PageHero({
   body?: string;
 }) {
   return (
-    <section className="rg-royal-section">
+    <section className="rg-royal-section rg-circuit">
+      <div className="rg-scanline" />
       <div className="rg-container relative py-16 md:py-24">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
           {eyebrow}

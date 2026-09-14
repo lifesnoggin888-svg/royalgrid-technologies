@@ -104,26 +104,22 @@ export default function HomePage() {
             </div>
           </div>
           <div className="md:col-span-4 md:pt-2">
-            <div
-              className="rounded-sm border p-6"
-              style={{
-                borderColor: "var(--color-gold)",
-                background:
-                  "linear-gradient(160deg, var(--color-paper-dim), var(--color-paper))",
-              }}
-            >
-              <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
-                Current stage
+            <div className="rg-glass rg-hud-frame p-6">
+              <div className="flex items-center gap-2">
+                <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+                  System status — live
+                </p>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-white">
+                Discover&nbsp;→&nbsp;Verify&nbsp;→&nbsp;Match&nbsp;→&nbsp;Qualify&nbsp;→&nbsp;Prepare&nbsp;→&nbsp;Track
+                runs end to end today, with one real Nigerian government data source connected.
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">
-                Live: the discover-verify-match-qualify-prepare-track pipeline works end to
-                end today, with one real Nigerian government data source already connected.
-              </p>
-              <div className="mt-4 h-px bg-[var(--color-line)]" />
-              <p className="mt-4 text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
+              <div className="mt-4 h-px" style={{ background: "rgba(201,162,74,0.25)" }} />
+              <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
                 Beachhead
               </p>
-              <p className="mt-2 text-sm text-[var(--color-ink)]">Nigeria-first, architected for Africa-scale.</p>
+              <p className="mt-2 text-sm text-[var(--color-muted-on-dark)]">Nigeria-first, architected for Africa-scale.</p>
             </div>
           </div>
         </div>
@@ -159,7 +155,8 @@ export default function HomePage() {
       </section>
 
       {/* Infrastructure / model */}
-      <section className="rg-royal-section">
+      <section className="rg-royal-section rg-circuit">
+        <div className="rg-scanline" />
         <div className="rg-container relative py-20">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
             The RoyalGrid infrastructure
@@ -176,15 +173,17 @@ export default function HomePage() {
             />
             {["Discover", "Verify", "Match", "Qualify", "Prepare", "Track"].map((step, i) => (
               <div key={step} className="relative flex flex-col items-center text-center">
-                <div
-                  className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full font-serif text-sm font-semibold"
-                  style={{
-                    background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
-                    color: "var(--color-purple-deep)",
-                    boxShadow: "0 0 0 6px rgba(10,6,18,1), 0 0 24px rgba(201,162,74,0.55)",
-                  }}
-                >
-                  {i + 1}
+                <div className={i === 0 ? "rg-ping relative" : "relative"}>
+                  <div
+                    className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-serif text-sm font-semibold"
+                    style={{
+                      background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
+                      color: "var(--color-purple-deep)",
+                      boxShadow: "0 0 0 6px rgba(10,6,18,1), 0 0 24px rgba(201,162,74,0.55)",
+                    }}
+                  >
+                    {i + 1}
+                  </div>
                 </div>
                 <span className="mt-3 text-sm font-medium text-white">{step}</span>
               </div>
