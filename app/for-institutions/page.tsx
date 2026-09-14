@@ -55,7 +55,7 @@ export default function ForInstitutionsPage() {
 
       <section className="border-b border-[var(--color-line)]">
         <div className="rg-container py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Who this is for
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -73,7 +73,7 @@ export default function ForInstitutionsPage() {
 
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Longer-term institutional capability
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-muted)]">
@@ -83,7 +83,7 @@ export default function ForInstitutionsPage() {
           </p>
           <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-2 lg:grid-cols-3">
             {CAPABILITIES.map((c) => (
-              <div key={c.title} className="bg-[var(--color-paper)] p-7">
+              <div key={c.title} className="rg-card p-7">
                 <h3 className="text-base font-medium text-[var(--color-ink)]">{c.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{c.body}</p>
               </div>
@@ -96,7 +96,7 @@ export default function ForInstitutionsPage() {
         <div className="rg-container py-16">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] hover:bg-[var(--color-ink-soft)]"
+            className="rg-btn-primary"
           >
             Discuss institutional access
           </Link>

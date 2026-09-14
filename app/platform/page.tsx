@@ -65,7 +65,7 @@ export default function PlatformPage() {
 
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-16">
-          <div className="rounded-sm border border-[var(--color-line)] bg-[var(--color-paper)] p-6 md:p-8">
+          <div className="rg-card p-6 md:p-8">
             <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
               Current stage
             </p>
@@ -90,7 +90,7 @@ export default function PlatformPage() {
 
       <section className="border-b border-[var(--color-line)]">
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Operating model
           </p>
           <h2 className="font-serif mt-4 max-w-2xl text-2xl text-[var(--color-ink)] md:text-3xl">
@@ -99,8 +99,8 @@ export default function PlatformPage() {
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-2 lg:grid-cols-3">
             {PIPELINE.map((p, i) => (
-              <div key={p.step} className="bg-[var(--color-paper)] p-7">
-                <span className="font-serif text-sm text-[var(--color-gold)]">
+              <div key={p.step} className="rg-card p-7">
+                <span className="font-serif text-sm text-[var(--color-purple)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 text-base font-medium text-[var(--color-ink)]">{p.step}</h3>
@@ -113,12 +113,12 @@ export default function PlatformPage() {
 
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Design principles
           </p>
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             {PRINCIPLES.map((p) => (
-              <div key={p.title} className="border-l-2 border-[var(--color-gold)] pl-6">
+              <div key={p.title} className="border-l-2 border-[var(--color-purple)] pl-6">
                 <h3 className="text-base font-medium text-[var(--color-ink)]">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{p.body}</p>
               </div>
@@ -129,7 +129,7 @@ export default function PlatformPage() {
 
       <section>
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Opportunity classes at launch
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -154,7 +154,7 @@ export default function PlatformPage() {
           <div className="mt-12 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/how-it-works"
-              className="inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] hover:bg-[var(--color-ink-soft)]"
+              className="rg-btn-primary"
             >
               See how it works end to end
             </Link>

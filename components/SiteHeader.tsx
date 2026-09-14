@@ -19,15 +19,20 @@ export default function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[var(--color-paper)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--color-paper)]/80">
-      <div className="rg-container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif text-lg tracking-tight text-[var(--color-ink)]">
-            RoyalGrid <span className="text-[var(--color-gold)]">Technologies</span>
+    <header
+      className="sticky top-0 z-50 border-b border-[rgba(201,162,74,0.25)] backdrop-blur"
+      style={{
+        background: "linear-gradient(180deg, rgba(10,6,18,0.97), rgba(26,12,56,0.94))",
+      }}
+    >
+      <div className="rg-container flex h-16 items-center justify-between gap-8">
+        <Link href="/" className="flex shrink-0 items-center gap-2" onClick={() => setOpen(false)}>
+          <span className="font-serif text-lg tracking-tight text-white">
+            RoyalGrid <span className="rg-metallic-dark">Technologies</span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex flex-1 items-center gap-6 xl:gap-7">
           {NAV.map((item) => {
             const active = pathname === item.href;
             return (
@@ -36,8 +41,8 @@ export default function SiteHeader() {
                 href={item.href}
                 className={`text-sm transition-colors ${
                   active
-                    ? "text-[var(--color-ink)] font-medium"
-                    : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                    ? "text-white font-medium"
+                    : "text-[var(--color-muted-on-dark)] hover:text-[var(--color-gold-soft)]"
                 }`}
               >
                 {item.label}
@@ -47,12 +52,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <a
-            href="https://opportunitygrid.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-sm border border-[var(--color-ink)] px-4 py-2 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
-          >
+          <a href="https://opportunitygrid.vercel.app" target="_blank" rel="noopener noreferrer" className="rg-btn-primary">
             Explore OpportunityGrid
           </a>
         </div>
@@ -62,17 +62,17 @@ export default function SiteHeader() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-sm border border-[var(--color-line)]"
+          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-sm border border-[rgba(201,162,74,0.35)]"
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           <div className="flex flex-col gap-1.5">
             <span
-              className={`block h-px w-5 bg-[var(--color-ink)] transition-transform ${
+              className={`block h-px w-5 bg-[var(--color-gold-soft)] transition-transform ${
                 open ? "translate-y-[3.5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-px w-5 bg-[var(--color-ink)] transition-transform ${
+              className={`block h-px w-5 bg-[var(--color-gold-soft)] transition-transform ${
                 open ? "-translate-y-[3.5px] -rotate-45" : ""
               }`}
             />
@@ -81,14 +81,14 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[var(--color-line)] bg-[var(--color-paper)]">
+        <div className="lg:hidden border-t border-[rgba(201,162,74,0.25)]" style={{ background: "var(--color-ink)" }}>
           <nav className="rg-container flex flex-col py-4">
             {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base text-[var(--color-ink)] border-b border-[var(--color-line)] last:border-none"
+                className="py-3 text-base text-white border-b border-[rgba(201,162,74,0.15)] last:border-none"
               >
                 {item.label}
               </Link>
@@ -98,7 +98,7 @@ export default function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center rounded-sm border border-[var(--color-ink)] px-4 py-3 text-sm font-medium text-[var(--color-ink)]"
+              className="rg-btn-primary mt-4 w-full"
             >
               Explore OpportunityGrid
             </a>

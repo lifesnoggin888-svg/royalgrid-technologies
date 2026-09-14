@@ -40,7 +40,7 @@ export default function MarketsPage() {
             {PHASES.map((p) => (
               <div key={p.title} className="grid gap-4 border-b border-[var(--color-line)] pb-10 last:border-none md:grid-cols-12 md:gap-8">
                 <div className="md:col-span-3">
-                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-gold)]">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-purple)]">
                     {p.label}
                   </span>
                   <h3 className="font-serif mt-2 text-xl text-[var(--color-ink)]">{p.title}</h3>
@@ -56,7 +56,7 @@ export default function MarketsPage() {
 
       <section className="bg-[var(--color-paper-dim)]">
         <div className="rg-container py-16">
-          <div className="rounded-sm border border-[var(--color-line)] bg-[var(--color-paper)] p-6 md:p-8">
+          <div className="rg-card p-6 md:p-8">
             <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
               On market sizing
             </p>

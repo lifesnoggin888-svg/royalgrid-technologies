@@ -1,23 +1,43 @@
 import Link from "next/link";
+import NetworkGraphic from "@/components/NetworkGraphic";
 
 const FRAGMENTS = [
   {
-    n: "01",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
+        <path d="M4 12a8 8 0 1116 0 8 8 0 01-16 0z" />
+        <path d="M12 8v4l3 2" strokeLinecap="round" />
+      </svg>
+    ),
     title: "Fragmentation",
     body: "Funding, procurement, accelerator, export, and development-finance opportunities are scattered across thousands of portals, agencies, and institutions — each with its own format, cadence, and language.",
   },
   {
-    n: "02",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
+        <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
     title: "Verification",
     body: "A listing found on social media or a forwarded PDF carries no source, no issuer, no confirmed deadline. Businesses cannot tell what is current, expired, or fabricated.",
   },
   {
-    n: "03",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 3v18M7 7H3l3 7a4 4 0 006 0l3-7h-4M17 7h4l-3 7a4 4 0 01-6 0" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
     title: "Eligibility",
     body: "Most opportunities list requirements in dense, jurisdiction-specific language. Determining fit against a real business profile takes hours a founder does not have.",
   },
   {
-    n: "04",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
+        <rect x="5" y="4" width="14" height="17" rx="2" />
+        <path d="M9 2h6v3H9zM8 10h8M8 14h8M8 18h5" strokeLinecap="round" />
+      </svg>
+    ),
     title: "Application readiness",
     body: "Even a qualified business often misses a deadline because the document, certification, or financial statement it needed was not identified early enough to prepare.",
   },
@@ -42,14 +62,22 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-[var(--color-line)]">
-        <div className="rg-container grid gap-10 py-20 md:grid-cols-12 md:py-28">
+      <section
+        className="relative overflow-hidden border-b border-[var(--color-line)]"
+        style={{
+          background:
+            "radial-gradient(1200px 480px at 15% -10%, rgba(108,63,201,0.16), transparent), radial-gradient(900px 400px at 100% 0%, rgba(201,162,74,0.14), transparent), var(--color-paper)",
+        }}
+      >
+        <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
+        <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple-soft)]">
               RoyalGrid Technologies
             </p>
             <h1 className="font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
-              Opportunity should not depend on knowing where to look.
+              <span className="rg-metallic">Opportunity</span> should not depend on knowing
+              where to look.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
               African businesses operate across a fragmented landscape of grants, procurement,
@@ -63,26 +91,33 @@ export default function HomePage() {
                 href="https://opportunitygrid.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] transition-colors hover:bg-[var(--color-ink-soft)]"
+                className="rg-btn-primary"
               >
                 Explore OpportunityGrid
               </a>
               <Link
                 href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-sm border border-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper-dim)]"
+                className="inline-flex items-center justify-center rounded-sm border border-[var(--color-gold)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-gold)]/10"
               >
                 How It Works
               </Link>
             </div>
           </div>
           <div className="md:col-span-4 md:pt-2">
-            <div className="rounded-sm border border-[var(--color-line)] bg-[var(--color-paper-dim)] p-6">
+            <div
+              className="rounded-sm border p-6"
+              style={{
+                borderColor: "var(--color-gold)",
+                background:
+                  "linear-gradient(160deg, var(--color-paper-dim), var(--color-paper))",
+              }}
+            >
               <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
                 Current stage
               </p>
               <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">
-                Product infrastructure in development. Technical foundation: live,
-                evidence-bound opportunity discovery technology already operating.
+                Live: the discover-verify-match-qualify-prepare-track pipeline works end to
+                end today, with one real Nigerian government data source already connected.
               </p>
               <div className="mt-4 h-px bg-[var(--color-line)]" />
               <p className="mt-4 text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
@@ -98,7 +133,7 @@ export default function HomePage() {
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
               The problem
             </p>
             <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
@@ -111,11 +146,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-[var(--color-line)] bg-[var(--color-line)] sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {FRAGMENTS.map((f) => (
-              <div key={f.n} className="bg-[var(--color-paper)] p-7">
-                <span className="font-serif text-sm text-[var(--color-gold)]">{f.n}</span>
-                <h3 className="mt-3 text-base font-medium text-[var(--color-ink)]">{f.title}</h3>
+              <div key={f.title} className="rg-card p-7">
+                <span className="rg-badge">{f.icon}</span>
+                <h3 className="mt-4 text-base font-medium text-[var(--color-ink)]">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{f.body}</p>
               </div>
             ))}
@@ -124,31 +159,39 @@ export default function HomePage() {
       </section>
 
       {/* Infrastructure / model */}
-      <section className="border-b border-[var(--color-line)]">
-        <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+      <section className="rg-royal-section">
+        <div className="rg-container relative py-20">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
             The RoyalGrid infrastructure
           </p>
-          <h2 className="font-serif mt-4 max-w-2xl text-2xl text-[var(--color-ink)] md:text-3xl">
+          <h2 className="font-serif mt-4 max-w-2xl text-2xl text-white md:text-3xl">
             One operating model, from discovery to a tracked application.
           </h2>
 
-          <div className="mt-12 flex flex-wrap items-stretch gap-3">
-            {["Discover", "Verify", "Match", "Qualify", "Prepare", "Track"].map((step, i, arr) => (
-              <div key={step} className="flex items-center gap-3">
-                <div className="rounded-sm border border-[var(--color-line)] bg-[var(--color-paper-dim)] px-5 py-4">
-                  <span className="text-sm font-medium text-[var(--color-ink)]">{step}</span>
+          <div className="relative mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            <div
+              className="pointer-events-none absolute left-0 right-0 top-6 hidden lg:block"
+              style={{ height: 2, background: "linear-gradient(90deg, transparent, var(--color-gold) 10%, var(--color-gold) 90%, transparent)" }}
+              aria-hidden
+            />
+            {["Discover", "Verify", "Match", "Qualify", "Prepare", "Track"].map((step, i) => (
+              <div key={step} className="relative flex flex-col items-center text-center">
+                <div
+                  className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full font-serif text-sm font-semibold"
+                  style={{
+                    background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
+                    color: "var(--color-purple-deep)",
+                    boxShadow: "0 0 0 6px rgba(10,6,18,1), 0 0 24px rgba(201,162,74,0.55)",
+                  }}
+                >
+                  {i + 1}
                 </div>
-                {i < arr.length - 1 && (
-                  <span className="hidden text-[var(--color-line)] sm:inline" aria-hidden>
-                    &rarr;
-                  </span>
-                )}
+                <span className="mt-3 text-sm font-medium text-white">{step}</span>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[var(--color-muted)]">
+          <p className="mt-16 max-w-2xl text-sm leading-relaxed text-[var(--color-muted-on-dark)]">
             OpportunityGrid, RoyalGrid&apos;s flagship platform, runs this model against
             approved public sources — every opportunity retains its issuer, source URL,
             retrieval date, and confidence level. The system never invents eligibility or
@@ -156,7 +199,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/platform"
-            className="mt-6 inline-flex text-sm font-medium text-[var(--color-gold)] hover:text-[var(--color-clay)]"
+            className="mt-6 inline-flex text-sm font-medium text-[var(--color-gold-soft)] hover:text-white"
           >
             See the full platform architecture &rarr;
           </Link>
@@ -166,7 +209,7 @@ export default function HomePage() {
       {/* Use cases */}
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Two customer surfaces
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -174,16 +217,16 @@ export default function HomePage() {
               <Link
                 key={u.href}
                 href={u.href}
-                className="group flex flex-col justify-between rounded-sm border border-[var(--color-line)] bg-[var(--color-paper)] p-8 transition-colors hover:border-[var(--color-gold)]"
+                className="rg-card group flex flex-col justify-between p-8"
               >
                 <div>
-                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-gold)]">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-purple)]">
                     {u.tag}
                   </span>
                   <h3 className="font-serif mt-3 text-xl text-[var(--color-ink)]">{u.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{u.body}</p>
                 </div>
-                <span className="mt-6 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-gold)]">
+                <span className="mt-6 text-sm font-medium text-[var(--color-ink)] group-hover:text-[var(--color-purple)]">
                   Learn more &rarr;
                 </span>
               </Link>
@@ -197,7 +240,7 @@ export default function HomePage() {
         <div className="rg-container py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
                 Nigeria-first, Africa-scale
               </p>
               <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
@@ -210,7 +253,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/markets"
-                className="mt-6 inline-flex text-sm font-medium text-[var(--color-gold)] hover:text-[var(--color-clay)]"
+                className="mt-6 inline-flex text-sm font-medium text-[var(--color-purple)] hover:text-[var(--color-clay)]"
               >
                 View market roadmap &rarr;
               </Link>

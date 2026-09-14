@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
             {JOURNEY.map((j, i) => (
               <div key={j.title} className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-gold)] font-serif text-sm text-[var(--color-gold)]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-purple)] font-serif text-sm text-[var(--color-purple)]">
                     {i + 1}
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export default function HowItWorksPage() {
       <section className="bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
               A note on honesty
             </p>
             <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">

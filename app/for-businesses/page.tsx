@@ -60,12 +60,12 @@ export default function ForBusinessesPage() {
 
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold)]">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
             Business tiers
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {TIERS.map((t) => (
-              <div key={t.name} className="rounded-sm border border-[var(--color-line)] bg-[var(--color-paper)] p-7">
+              <div key={t.name} className="rg-card p-7">
                 <h3 className="text-base font-medium text-[var(--color-ink)]">{t.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{t.body}</p>
               </div>
@@ -82,7 +82,7 @@ export default function ForBusinessesPage() {
         <div className="rg-container py-16">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] hover:bg-[var(--color-ink-soft)]"
+            className="rg-btn-primary"
           >
             Request early access
           </Link>
