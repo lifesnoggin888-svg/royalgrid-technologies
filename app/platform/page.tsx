@@ -70,12 +70,20 @@ export default function PlatformPage() {
               Current stage
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--color-ink)]">
-              Product infrastructure in development. The technical foundation — live retrieval
-              and evidence-bound opportunity discovery — already exists and is being refactored
-              for African-first, multi-country operation. Next: Nigeria-first source
-              integrations, organization profiles, eligibility matching, and application
-              tracking.
+              Live: the full discover-verify-match-qualify-prepare-track pipeline is working
+              end to end, including one real, live African source — Nigeria&apos;s Bureau of
+              Public Procurement open-contracting data. Other opportunity classes (grants,
+              accelerators, export programs) currently run on clearly labeled demonstration
+              records while their own source integrations are built.
             </p>
+            <a
+              href="https://opportunitygrid.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-5 py-2.5 text-sm font-medium text-[var(--color-paper)] hover:bg-[var(--color-ink-soft)]"
+            >
+              Launch OpportunityGrid &rarr;
+            </a>
           </div>
         </div>
       </section>

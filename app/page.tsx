@@ -59,12 +59,14 @@ export default function HomePage() {
               determine what they qualify for and what they need to act.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/platform"
+              <a
+                href="https://opportunitygrid.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-sm bg-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-paper)] transition-colors hover:bg-[var(--color-ink-soft)]"
               >
                 Explore OpportunityGrid
-              </Link>
+              </a>
               <Link
                 href="/how-it-works"
                 className="inline-flex items-center justify-center rounded-sm border border-[var(--color-ink)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-paper-dim)]"

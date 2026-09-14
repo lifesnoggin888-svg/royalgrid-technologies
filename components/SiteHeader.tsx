@@ -47,12 +47,14 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <Link
-            href="/platform"
+          <a
+            href="https://opportunitygrid.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center rounded-sm border border-[var(--color-ink)] px-4 py-2 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]"
           >
             Explore OpportunityGrid
-          </Link>
+          </a>
         </div>
 
         <button
@@ -91,13 +93,15 @@ export default function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/platform"
+            <a
+              href="https://opportunitygrid.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex items-center justify-center rounded-sm border border-[var(--color-ink)] px-4 py-3 text-sm font-medium text-[var(--color-ink)]"
             >
               Explore OpportunityGrid
-            </Link>
+            </a>
           </nav>
         </div>
       )}
