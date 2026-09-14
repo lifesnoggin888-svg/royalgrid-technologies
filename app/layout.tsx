@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ClickSound from "@/components/ClickSound";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
+        <ClickSound />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
