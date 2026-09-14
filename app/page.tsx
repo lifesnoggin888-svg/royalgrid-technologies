@@ -72,26 +72,26 @@ export default function HomePage() {
         <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
         <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple-soft)]">
+            <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple-soft)]">
               RoyalGrid Technologies
             </p>
-            <h1 className="font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
+            <h1 className="rg-reveal rg-reveal-2 font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
               <span className="rg-metallic">Opportunity</span> should not depend on knowing
               where to look.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+            <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
               African businesses operate across a fragmented landscape of grants, procurement,
               accelerators, supplier programs, export initiatives, and development-finance
               opportunities. RoyalGrid Technologies is building the infrastructure that
               discovers, verifies, and organizes those opportunities — then helps businesses
               determine what they qualify for and what they need to act.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="rg-reveal rg-reveal-4 mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="https://opportunitygrid.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rg-btn-primary"
+                className="rg-btn-primary rg-ripple"
               >
                 Explore OpportunityGrid
               </a>
@@ -103,7 +103,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="md:col-span-4 md:pt-2">
+          <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
             <div className="rg-glass rg-hud-frame p-6">
               <div className="flex items-center gap-2">
                 <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />

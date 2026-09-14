@@ -34,6 +34,8 @@ export default function NetworkGraphic({ className }: { className?: string }) {
           r={i % 3 === 0 ? 6 : 4}
           fill={i % 3 === 0 ? "var(--color-gold)" : "var(--color-purple-soft)"}
           fillOpacity={i % 3 === 0 ? 0.9 : 0.55}
+          className="rg-float"
+          style={{ animationDelay: `${(i % 5) * 0.4}s`, transformBox: "fill-box", transformOrigin: "center" }}
         />
       ))}
     </svg>
