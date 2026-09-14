@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0e1512;
+  --color-ink-soft: #1a2420;
+  --color-paper: #faf8f4;
+  --color-paper-dim: #f1ede4;
+  --color-line: #dcd5c6;
+  --color-gold: #a9772c;
+  --color-gold-soft: #c99a4c;
+  --color-clay: #7a3b2e;
+  --color-muted: #5b6560;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-line: var(--color-line);
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+  --color-clay: var(--color-clay);
+  --color-muted: var(--color-muted);
+  --font-serif: var(--font-rg-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-rg-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.rg-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .rg-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.rg-rule {
+  height: 1px;
+  background: var(--color-line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
