@@ -43,13 +43,15 @@ export default function HowItWorksPage() {
         <div className="rg-container py-20">
           <div className="mx-auto max-w-3xl space-y-12">
             {JOURNEY.map((j, i) => (
-              <div key={j.title} className="flex gap-6">
+              <div
+                key={j.title}
+                className="rg-reveal flex gap-6"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
                 <div className="flex-shrink-0">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-purple)] font-serif text-sm text-[var(--color-purple)]">
-                    {i + 1}
-                  </div>
+                  <div className="rg-badge font-serif text-base">{i + 1}</div>
                 </div>
-                <div>
+                <div className="rg-card flex-1 p-5">
                   <h3 className="text-lg font-medium text-[var(--color-ink)]">
                     {j.title.replace(/^\d+\.\s/, "")}
                   </h3>
@@ -61,16 +63,17 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-paper-dim)]">
-        <div className="rg-container py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
+      <section className="rg-royal-section rg-circuit">
+        <div className="rg-scanline" />
+        <div className="rg-container relative py-20">
+          <div className="rg-glass rg-hud-frame mx-auto max-w-2xl p-8 text-center md:p-10">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
               A note on honesty
             </p>
-            <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
+            <h2 className="font-serif mt-4 text-2xl text-white md:text-3xl">
               Where the platform cannot verify something, it says so.
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted-on-dark)]">
               OpportunityGrid is designed to refuse rather than guess. If a source does not
               publish a deadline, funding amount, or eligibility detail, that field stays
               empty. A business is told what is unverified, not given a confident-sounding

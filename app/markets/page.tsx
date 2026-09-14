@@ -37,8 +37,12 @@ export default function MarketsPage() {
       <section className="border-b border-[var(--color-line)]">
         <div className="rg-container py-20">
           <div className="space-y-10">
-            {PHASES.map((p) => (
-              <div key={p.title} className="grid gap-4 border-b border-[var(--color-line)] pb-10 last:border-none md:grid-cols-12 md:gap-8">
+            {PHASES.map((p, i) => (
+              <div
+                key={p.title}
+                className="rg-reveal grid gap-4 border-b border-[var(--color-line)] pb-10 last:border-none md:grid-cols-12 md:gap-8"
+                style={{ animationDelay: `${i * 0.12}s` }}
+              >
                 <div className="md:col-span-3">
                   <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-purple)]">
                     {p.label}

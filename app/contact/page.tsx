@@ -39,7 +39,7 @@ export default function ContactPage() {
 
       <section>
         <div className="rg-container py-16">
-          <div className="mx-auto max-w-xl">
+          <div className="rg-card mx-auto max-w-xl p-8 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[var(--color-ink)]">
@@ -96,14 +96,7 @@ export default function ContactPage() {
                   className="mt-2 w-full resize-none rounded-sm border border-[var(--color-line)] bg-[var(--color-paper)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none focus:border-[var(--color-purple)]"
                 />
               </div>
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-sm px-6 py-3 text-sm font-medium text-white shadow-[0_2px_14px_rgba(61,26,120,0.3)] transition-transform hover:scale-[1.02] sm:w-auto"
-                style={{
-                  background:
-                    "linear-gradient(120deg, var(--color-purple-deep), var(--color-purple), var(--color-purple-soft))",
-                }}
-              >
+              <button type="submit" className="rg-btn-primary w-full sm:w-auto">
                 Send message
               </button>
               <p className="text-xs leading-relaxed text-[var(--color-muted)]">

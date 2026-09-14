@@ -18,7 +18,7 @@ export default function CompanyPage() {
 
       <section className="border-b border-[var(--color-line)]">
         <div className="rg-container py-16">
-          <div className="mx-auto max-w-2xl">
+          <div className="rg-reveal mx-auto max-w-2xl">
             <h2 className="text-lg font-medium text-[var(--color-ink)]">Thesis</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-muted)]">
               RoyalGrid Technologies is building the opportunity-access infrastructure for
@@ -37,7 +37,7 @@ export default function CompanyPage() {
 
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-16">
-          <div className="mx-auto max-w-2xl">
+          <div className="rg-card mx-auto max-w-2xl p-8">
             <h2 className="text-lg font-medium text-[var(--color-ink)]">Legal facts</h2>
             <dl className="mt-6 space-y-5 text-sm">
               <div className="flex flex-col gap-1 border-b border-[var(--color-line)] pb-5 sm:flex-row sm:justify-between">
@@ -67,7 +67,7 @@ export default function CompanyPage() {
 
       <section>
         <div className="rg-container py-16">
-          <div className="mx-auto max-w-2xl">
+          <div className="rg-reveal mx-auto max-w-2xl">
             <h2 className="text-lg font-medium text-[var(--color-ink)]">Independence</h2>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">
               RoyalGrid Technologies operates as an independent venture. It is not a subsidiary,
