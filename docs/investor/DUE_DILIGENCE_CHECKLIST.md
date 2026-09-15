@@ -8,6 +8,8 @@ marked honestly. Nothing here should be read as already satisfied unless marked 
 - [ ] Business Name registration certificate (No. 9843389) — STATUS: registration number
       confirmed; certificate document not attached to this repository.
 - [ ] Proof of incorporation as a limited company (if/when pursued) — STATUS: not started.
+      See [../legal/CAC_INCORPORATION_GUIDE.md](../legal/CAC_INCORPORATION_GUIDE.md) for the
+      concrete steps and the one decision (founder structure) blocking it.
 - [ ] Register of directors/officers — STATUS: not published.
 - [ ] Cap table — STATUS: not established; see [CAP_TABLE_TEMPLATE.md](./CAP_TABLE_TEMPLATE.md).
 

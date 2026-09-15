@@ -38,28 +38,28 @@ a credible near-term plan for it.
 **What is real and verified today:**
 - Live corporate site: https://opulentia-digital.vercel.app, repositioned so AetherGrid is
   the unmistakable flagship story within the first screen, per your directive
-- AetherGrid product page (`/services/aethergrid`) with real architecture detail and a link
-  to the live coordination demo (aethergrid-delta.vercel.app)
+- AetherGrid product page (`/services/aethergrid`) with real architecture detail
+- **AetherGrid's actual source code is now migrated** to clean, independent ownership at
+  `github.com/lifesnoggin888-svg/aethergrid` — verified zero ArkNet references directly on
+  the pushed remote (README, globals.css, dashboard-client.tsx, header.tsx all re-fetched
+  and grepped clean). This closes the IP-chain gap from the prior version of this verdict.
 - Clean, independent GitHub repository (`lifesnoggin888-svg/opulentia-digital-core-horizon`)
   for the corporate site, verified zero ArkNet references
 
-**Why NOT READY:**
-1. **AetherGrid's actual source code has not been migrated.** The `jayblast-spec` GitHub
-   token still cannot see `aethergrid` or `TrustOS` — this is the single blocking item, and
-   it requires your action (editing the token's repository access), not mine. Until that
-   source lives under clean Opulentia ownership, the IP chain a diligence process would check
-   is incomplete.
-2. **The live demo is behind a login wall with no public view.** `aethergrid-delta.vercel.app`
-   redirects straight to `/login` — a VC reviewer cannot see AetherGrid working without an
-   account. This is disclosed honestly on the site ("requires signing in... not a marketing
-   page") rather than hidden, but it is a real gap versus your own bar ("deploy a clearly
-   linked product/demo surface").
-3. **Same single-operating-founder question as RoyalGrid**, and the same cap-table/
+**Why still NOT READY:**
+1. **AetherGrid is not live.** `aethergrid-source.vercel.app` (the new, clean deployment)
+   returns `HTTP 500` — it's deployed and builds successfully, but needs its Supabase
+   database credentials wired in. The real production database has been identified and
+   confirmed (`knxknvhntyhmtsklrpwb`, schema-matched to `auctions`/`bids`/`nodes`/etc.), but
+   retrieving its API keys requires you at a device logged into that Supabase account. A VC
+   reviewer cannot see AetherGrid working at all right now — worse than the prior login-wall
+   gap, since the page doesn't render at all.
+2. **Same single-operating-founder question as RoyalGrid**, and the same cap-table/
    incorporation gaps.
 
-**What would flip this to READY:** the AetherGrid source migrated to clean Opulentia
-ownership (blocked on your token fix), and either a public read-only demo view added to
-AetherGrid or a recorded walkthrough substituting for live access during diligence.
+**What would flip this to READY:** wire the Supabase keys (minutes, once you're home) so
+AetherGrid actually renders and functions, plus the same founder-structure and
+incorporation items RoyalGrid needs.
 
 ## What is explicitly NOT claimed anywhere in either site or these docs
 
