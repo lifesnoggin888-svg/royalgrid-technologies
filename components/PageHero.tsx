@@ -1,16 +1,29 @@
+import Image from "next/image";
+
 export default function PageHero({
   eyebrow,
   title,
   body,
+  logo,
 }: {
   eyebrow: string;
   title: string;
   body?: string;
+  logo?: boolean;
 }) {
   return (
     <section className="rg-royal-section rg-circuit">
       <div className="rg-scanline" />
       <div className="rg-container relative py-16 md:py-24">
+        {logo && (
+          <Image
+            src="/logo-hero.png"
+            alt="RoyalGrid Technologies"
+            width={352}
+            height={192}
+            className="rg-reveal mb-6 h-auto w-40 object-contain"
+          />
+        )}
         <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
           {eyebrow}
         </p>

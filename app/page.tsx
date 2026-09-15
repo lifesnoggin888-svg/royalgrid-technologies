@@ -74,17 +74,14 @@ export default function HomePage() {
         <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
             <Image
-              src="/logo-hero.jpg"
+              src="/logo-hero.png"
               alt="RoyalGrid Technologies"
-              width={112}
-              height={112}
+              width={352}
+              height={192}
               priority
-              className="rg-reveal rg-reveal-1 mb-6 h-20 w-20 rounded-full object-cover shadow-[0_0_50px_rgba(201,162,74,0.3)]"
+              className="rg-reveal rg-reveal-1 mb-6 h-auto w-56 object-contain sm:w-64"
             />
-            <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple-soft)]">
-              RoyalGrid Technologies
-            </p>
-            <span className="rg-reveal rg-reveal-1 rg-badge-gold mt-2 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
+            <span className="rg-reveal rg-reveal-1 rg-badge-gold inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
               Registered with CAC &middot; Business Name No. 9843389
             </span>
             <h1 className="rg-reveal rg-reveal-2 font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
@@ -177,14 +174,21 @@ export default function HomePage() {
             One operating model, from discovery to a tracked application.
           </h2>
 
-          <div className="relative mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="relative mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
             <div
               className="pointer-events-none absolute left-0 right-0 top-6 hidden lg:block"
               style={{ height: 2, background: "linear-gradient(90deg, transparent, var(--color-gold) 10%, var(--color-gold) 90%, transparent)" }}
               aria-hidden
             />
-            {["Discover", "Verify", "Match", "Qualify", "Prepare", "Track"].map((step, i) => (
-              <div key={step} className="relative flex flex-col items-center text-center">
+            {[
+              { step: "Discover", body: "Pulled from approved sources." },
+              { step: "Verify", body: "Issuer, dates, evidence." },
+              { step: "Match", body: "Against your profile." },
+              { step: "Qualify", body: "No invented eligibility." },
+              { step: "Prepare", body: "A real readiness checklist." },
+              { step: "Track", body: "To submitted, won, or lost." },
+            ].map((s, i) => (
+              <div key={s.step} className="relative flex flex-col items-center text-center">
                 <div className={i === 0 ? "rg-ping relative" : "relative"}>
                   <div
                     className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-serif text-sm font-semibold"
@@ -197,20 +201,17 @@ export default function HomePage() {
                     {i + 1}
                   </div>
                 </div>
-                <span className="mt-3 text-sm font-medium text-white">{step}</span>
+                <span className="mt-3 text-sm font-medium text-white">{s.step}</span>
+                <span className="mt-1 text-xs leading-snug text-[var(--color-muted-on-dark)]">
+                  {s.body}
+                </span>
               </div>
             ))}
           </div>
 
-          <p className="mt-16 max-w-2xl text-sm leading-relaxed text-[var(--color-muted-on-dark)]">
-            OpportunityGrid, RoyalGrid&apos;s flagship platform, runs this model against
-            approved public sources — every opportunity retains its issuer, source URL,
-            retrieval date, and confidence level. The system never invents eligibility or
-            fabricates a missing data point.
-          </p>
           <Link
             href="/platform"
-            className="mt-6 inline-flex text-sm font-medium text-[var(--color-gold-soft)] hover:text-white"
+            className="mt-14 inline-flex text-sm font-medium text-[var(--color-gold-soft)] hover:text-white"
           >
             See the full platform architecture &rarr;
           </Link>
