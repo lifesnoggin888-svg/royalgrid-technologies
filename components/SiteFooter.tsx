@@ -32,7 +32,7 @@ export default function SiteFooter() {
   return (
     <footer
       className="border-t border-[rgba(201,162,74,0.25)]"
-      style={{ background: "linear-gradient(180deg, var(--color-ink), var(--color-purple-deep))" }}
+      style={{ background: "linear-gradient(180deg, var(--color-void), var(--color-purple-deep))" }}
     >
       <div className="rg-container py-14">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">

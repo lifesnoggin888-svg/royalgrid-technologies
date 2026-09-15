@@ -81,7 +81,7 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[rgba(201,162,74,0.25)]" style={{ background: "var(--color-ink)" }}>
+        <div className="lg:hidden border-t border-[rgba(201,162,74,0.25)]" style={{ background: "var(--color-void)" }}>
           <nav className="rg-container flex flex-col py-4">
             {NAV.map((item) => (
               <Link

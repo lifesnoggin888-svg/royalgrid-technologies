@@ -1,23 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #0a0612;
-  --color-ink-soft: #170f28;
-  --color-paper: #f3f0ec;
-  --color-paper-dim: #e8e3dc;
-  --color-line: #d8d1c8;
+  /* Fixed, theme-independent dark surface — used by components (header,
+     footer, HUD bands) that must always render as the darkest layer,
+     regardless of what --color-ink/--color-paper mean below. */
+  --color-void: #0a0612;
+  --color-void-soft: #170f28;
+
+  /* Dark-theme site base: --color-ink is the default TEXT color,
+     --color-paper is the default BACKGROUND color — RoyalGrid runs dark
+     by default, so ink is light and paper is dark. */
+  --color-ink: #f3f0ec;
+  --color-ink-soft: #d8d1e8;
+  --color-paper: #0a0612;
+  --color-paper-dim: #140c22;
+  --color-line: #2c2340;
   --color-purple: #3d1a78;
   --color-purple-deep: #1a0c38;
-  --color-purple-soft: #6a5490;
-  --color-gold: #b3924f;
-  --color-gold-soft: #c7ad76;
+  --color-purple-soft: #8f78c4;
+  --color-gold: #c9a24a;
+  --color-gold-soft: #e6c874;
   --color-clay: #7a3b2e;
-  --color-muted: #5c5570;
+  --color-muted: #a79cc4;
   --color-muted-on-dark: #bcb2d6;
-  --color-good: #3f9a6f;
+  --color-good: #4db787;
 }
 
 @theme inline {
+  --color-void: var(--color-void);
+  --color-void-soft: var(--color-void-soft);
   --color-ink: var(--color-ink);
   --color-ink-soft: var(--color-ink-soft);
   --color-paper: var(--color-paper);
@@ -87,7 +98,7 @@ body {
       transparent
     ),
     radial-gradient(800px 420px at 100% 0%, rgba(201, 162, 74, 0.22), transparent),
-    linear-gradient(160deg, var(--color-purple-deep) 0%, var(--color-ink) 70%);
+    linear-gradient(160deg, var(--color-purple-deep) 0%, var(--color-void) 70%);
   color: var(--color-paper);
 }
 
@@ -126,14 +137,14 @@ body {
 .rg-card {
   border-radius: 0.5rem;
   border: 1px solid var(--color-line);
-  background: var(--color-paper);
-  box-shadow: 0 1px 2px rgba(26, 12, 56, 0.04);
+  background: var(--color-paper-dim);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px -16px rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .rg-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px -12px rgba(61, 26, 120, 0.28);
+  box-shadow: 0 16px 32px -12px rgba(143, 120, 196, 0.35);
   border-color: var(--color-purple-soft);
 }
 
