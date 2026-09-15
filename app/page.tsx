@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import NetworkGraphic from "@/components/NetworkGraphic";
 
@@ -72,9 +73,20 @@ export default function HomePage() {
         <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
         <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
+            <Image
+              src="/logo-hero.jpg"
+              alt="RoyalGrid Technologies"
+              width={112}
+              height={112}
+              priority
+              className="rg-reveal rg-reveal-1 mb-6 h-20 w-20 rounded-full object-cover shadow-[0_0_50px_rgba(201,162,74,0.3)]"
+            />
             <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple-soft)]">
               RoyalGrid Technologies
             </p>
+            <span className="rg-reveal rg-reveal-1 rg-badge-gold mt-2 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
+              Registered with CAC &middot; Business Name No. 9843389
+            </span>
             <h1 className="rg-reveal rg-reveal-2 font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
               <span className="rg-metallic">Opportunity</span> should not depend on knowing
               where to look.
