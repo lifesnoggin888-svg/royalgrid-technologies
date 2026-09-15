@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Space_Grotesk } from "next/font/google";
+import { Fraunces, Chakra_Petch } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ClickSound from "@/components/ClickSound";
@@ -11,7 +11,7 @@ const fraunces = Fraunces({
   weight: ["400", "500", "600"],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const chakraPetch = Chakra_Petch({
   variable: "--font-rg-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${chakraPetch.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <ClickSound />
         <SiteHeader />
