@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Orbitron, Chakra_Petch } from "next/font/google";
+import { Orbitron, Chakra_Petch, Manrope } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ClickSound from "@/components/ClickSound";
@@ -15,6 +15,12 @@ const chakraPetch = Chakra_Petch({
   variable: "--font-rg-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  variable: "--font-rg-nav",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 const siteUrl = "https://royalgrid-technologies.vercel.app";
@@ -66,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${chakraPetch.variable}`}>
+    <html lang="en" className={`${orbitron.variable} ${chakraPetch.variable} ${manrope.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <ClickSound />
         <SiteHeader />

@@ -43,6 +43,7 @@
   --color-muted: var(--color-muted);
   --font-serif: var(--font-rg-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-rg-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-nav: var(--font-rg-nav), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -480,6 +481,32 @@ body {
   width: 260%;
   height: 260%;
   opacity: 1;
+}
+
+/* Nav link — a thin underline sweeps in from center on hover, instead of
+   an instant color snap, so the header feels responsive rather than static. */
+.rg-nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  font-family: var(--font-nav);
+  letter-spacing: 0.01em;
+}
+
+.rg-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 1.5px;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-soft));
+  transform: translateX(-50%);
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rg-nav-link:hover::after,
+.rg-nav-link.rg-nav-active::after {
+  width: 100%;
 }
 
 /* Gentle float — a slow bob, for nodes/dots that should feel suspended

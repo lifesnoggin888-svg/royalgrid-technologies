@@ -39,9 +39,9 @@ export default function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm transition-colors ${
+                className={`rg-nav-link text-sm transition-colors ${
                   active
-                    ? "text-white font-medium"
+                    ? "rg-nav-active text-white font-medium"
                     : "text-[var(--color-muted-on-dark)] hover:text-[var(--color-gold-soft)]"
                 }`}
               >
@@ -88,7 +88,7 @@ export default function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base text-white border-b border-[rgba(201,162,74,0.15)] last:border-none"
+                className="rg-nav-link py-3 text-base text-white border-b border-[rgba(201,162,74,0.15)] last:border-none"
               >
                 {item.label}
               </Link>
