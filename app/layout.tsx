@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Chakra_Petch } from "next/font/google";
+import { Orbitron, Chakra_Petch } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ClickSound from "@/components/ClickSound";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const orbitron = Orbitron({
   variable: "--font-rg-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
 const chakraPetch = Chakra_Petch({
@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${chakraPetch.variable}`}>
+    <html lang="en" className={`${orbitron.variable} ${chakraPetch.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <ClickSound />
         <SiteHeader />
