@@ -9,22 +9,22 @@ export const metadata: Metadata = {
 
 const PRODUCTS = [
   {
-    tag: "Flagship",
-    name: "OpportunityGrid",
-    href: "https://opportunitygrid.vercel.app",
-    domain: "Opportunity-access infrastructure",
-    body: "Discovers, verifies, and structures grants, procurement, accelerator, export, and development-finance opportunities, then matches them against a business's real profile — discover, verify, match, qualify, prepare, track.",
-    status: "In active development, Nigeria-first",
-    signal: "5 opportunity categories // 6-stage pipeline",
-  },
-  {
-    tag: "Second product",
+    tag: "Lead product",
     name: "CityOS",
     href: "https://cityos-source.vercel.app",
     domain: "Flood & water-risk governance",
     body: "A predictive flood and water-risk governance console. It simulates monitored city zones, scores flood risk from rainfall and river-level telemetry, and auto-actuates pumps and barriers before a threshold is crossed — with an operator retaining pause/override authority and every action logged to an immutable audit trail.",
     status: "Deployed proof-of-concept — a working autonomous governance loop, not a multi-city production deployment",
     signal: "Supabase pg_cron tick loop // 60-second orchestration cycle",
+  },
+  {
+    tag: "Second product",
+    name: "OpportunityGrid",
+    href: "https://opportunitygrid.vercel.app",
+    domain: "Opportunity-access infrastructure",
+    body: "OpportunityGrid discovers, verifies, and structures funding, procurement, accelerator, export, and development-finance opportunities for African businesses, then matches each one against a business's real profile through a Discover → Verify → Match → Qualify → Prepare → Track pipeline — turning a scattered, unverifiable landscape into a working opportunity queue.",
+    status: "In active development — a live, working pipeline running on one connected data source, not a claim of nationwide coverage or a fixed customer count",
+    signal: "6-stage pipeline // 1 connected data source (Nigerian government)",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Products"
-        title="Two products, one operating model: verified data, structured action."
-        body="RoyalGrid Technologies builds infrastructure that turns fragmented, hard-to-verify information into a structured system an operator or business can act on — first for opportunity access, now extended to flood and water-risk governance."
+        title="Two products, one operating model: verified signal, structured action."
+        body="RoyalGrid Technologies builds infrastructure that turns fragmented, hard-to-verify signal into a structured system an operator or business can act on — led by CityOS, autonomous flood and water-risk governance, alongside OpportunityGrid, opportunity-access infrastructure for African businesses."
       />
 
       <section className="border-b border-[var(--color-line)]">

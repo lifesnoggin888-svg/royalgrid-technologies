@@ -29,13 +29,16 @@ const siteUrl = "https://royalgrid-technologies.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "RoyalGrid Technologies — African Opportunity-Access Infrastructure",
+    default: "RoyalGrid Technologies — Governance & Opportunity-Access Infrastructure",
     template: "%s | RoyalGrid Technologies",
   },
   description:
-    "RoyalGrid Technologies is building the opportunity-access infrastructure for African businesses. Its flagship platform, OpportunityGrid, discovers, verifies, and matches funding, procurement, accelerator, and development-finance opportunities into an evidence-backed path to application readiness.",
+    "RoyalGrid Technologies builds infrastructure that acts. CityOS, its lead product, is a predictive flood and water-risk governance console that auto-actuates pumps and barriers before a threshold is crossed. OpportunityGrid discovers, verifies, and matches funding, procurement, accelerator, and development-finance opportunities for African businesses.",
   keywords: [
     "RoyalGrid Technologies",
+    "CityOS",
+    "flood risk governance",
+    "water risk governance",
     "OpportunityGrid",
     "African funding opportunities",
     "Nigeria grants",
@@ -47,16 +50,16 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "RoyalGrid Technologies",
-    title: "RoyalGrid Technologies — African Opportunity-Access Infrastructure",
+    title: "RoyalGrid Technologies — Governance & Opportunity-Access Infrastructure",
     description:
-      "Opportunity should not depend on knowing where to look. RoyalGrid Technologies discovers, verifies, and matches African businesses to the funding, procurement, and growth opportunities they qualify for.",
+      "Risk should be governed before it becomes a crisis. RoyalGrid Technologies runs CityOS, an autonomous flood and water-risk governance console, and OpportunityGrid, opportunity-access infrastructure for African businesses.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RoyalGrid Technologies — African Opportunity-Access Infrastructure",
+    title: "RoyalGrid Technologies — Governance & Opportunity-Access Infrastructure",
     description:
-      "Opportunity should not depend on knowing where to look. Discover, verify, and act on opportunities built for African businesses.",
+      "Risk should be governed before it becomes a crisis. CityOS governs flood and water risk; OpportunityGrid governs opportunity access for African businesses.",
   },
   icons: {
     icon: "/icon.svg",

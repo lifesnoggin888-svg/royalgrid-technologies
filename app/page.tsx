@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const CITYOS_LOOP = [
+  { step: "Monitor", body: "Rainfall + river-level telemetry, per zone." },
+  { step: "Score risk", body: "Flood risk scored against threshold." },
+  { step: "Auto-actuate", body: "Pumps and barriers act before breach." },
+  { step: "Operator override", body: "Pause/override authority retained." },
+  { step: "Audit trail", body: "Every action logged, immutable." },
+];
+
 const FRAGMENTS = [
   {
     signal: "Root: no shared taxonomy across issuers",
@@ -86,7 +94,7 @@ const USE_CASES = [
     tag: "For Institutions",
     href: "/for-institutions",
     title: "Portfolio-level opportunity intelligence",
-    body: "Banks, accelerators, and development organizations use RoyalGrid to match opportunities against an entire portfolio or cohort, not one company at a time.",
+    body: "Banks, accelerators, and development organizations use OpportunityGrid to match opportunities against an entire portfolio or cohort, not one company at a time.",
   },
 ];
 
@@ -118,45 +126,53 @@ export default function HomePage() {
 
         <div className="rg-container relative py-24 md:py-36">
           <p className="rg-reveal font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
-            Opportunity-access infrastructure // Nigeria-first
+            RoyalGrid Technologies // Governance & opportunity-access infrastructure
           </p>
           <div className="mt-8 grid min-w-0 grid-cols-1 gap-10 md:grid-cols-12">
             <div className="min-w-0 md:col-span-8">
               <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.08] font-semibold text-white md:text-6xl">
-                <span className="rg-metallic-dark">Opportunity</span> should not depend on
-                knowing where to look.
+                <span className="rg-metallic-dark">Risk</span> should be governed before it
+                becomes a crisis.
               </h1>
               <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted-on-dark)] md:text-lg">
-                African businesses operate across a fragmented landscape of grants, procurement,
-                accelerators, supplier programs, export initiatives, and development-finance
-                opportunities. RoyalGrid Technologies is building the infrastructure that
-                discovers, verifies, and organizes those opportunities — then helps businesses
-                determine what they qualify for and what they need to act.
+                RoyalGrid Technologies builds infrastructure that acts. CityOS, our lead product,
+                is a predictive flood and water-risk governance console — it scores risk from live
+                rainfall and river-level telemetry and auto-actuates pumps and barriers before a
+                threshold is crossed, with an operator retaining pause/override authority at all
+                times. OpportunityGrid, our opportunity-access platform, discovers and verifies
+                the funding, procurement, and development-finance opportunities African businesses
+                qualify for.
               </p>
               <div className="rg-reveal rg-reveal-4 mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://opportunitygrid.vercel.app"
+                  href="https://cityos-source.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rg-btn-primary rg-ripple"
                 >
+                  Open CityOS
+                </a>
+                <a
+                  href="https://opportunitygrid.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rg-btn-ghost-dark"
+                >
                   Explore OpportunityGrid
                 </a>
-                <Link href="/how-it-works" className="rg-btn-ghost-dark">
-                  How It Works
-                </Link>
               </div>
               <div className="rg-reveal rg-reveal-4 mt-6 flex flex-wrap gap-2.5">
                 <span className="rg-chip">
                   <span className="rg-chip-dot" />
-                  Nigeria-first, Africa-scale
-                </span>
-                <span className="rg-chip">
-                  <span className="rg-chip-dot" />5 opportunity categories
+                  Two flagship products
                 </span>
                 <span className="rg-chip">
                   <span className="rg-chip-dot" />
-                  6-stage pipeline
+                  Autonomous governance loop
+                </span>
+                <span className="rg-chip">
+                  <span className="rg-chip-dot" />
+                  Nigeria-first, Africa-scale
                 </span>
               </div>
             </div>
@@ -166,47 +182,47 @@ export default function HomePage() {
                   <div className="flex items-center gap-2">
                     <span className="rg-ping relative inline-block h-2 w-2 rounded-full" style={{ background: "var(--color-good)" }} />
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-                      System status
+                      CityOS — system status
                     </p>
                   </div>
                   <span
                     className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-muted-on-dark)]"
                     style={{ border: "1px solid rgba(34,211,238,0.3)", padding: "2px 6px", borderRadius: "3px" }}
                   >
-                    Building
+                    Deployed PoC
                   </span>
                 </div>
                 <div className="mt-4">
                   <div className="rg-status-row">
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
-                      Pipeline
+                      Governance loop
                     </span>
                     <span className="font-mono text-[11.5px] leading-snug text-white break-words">
-                      Discover → Verify → Match → Qualify → Prepare → Track
+                      Monitor → Score risk → Auto-actuate → Override → Audit
                     </span>
                   </div>
                   <div className="rg-status-row">
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
-                      Sources connected
+                      Orchestration
                     </span>
                     <span className="font-mono text-[11.5px] leading-snug text-white">
-                      1 — Nigerian government data source
+                      Supabase pg_cron // 60-second tick
                     </span>
                   </div>
                   <div className="rg-status-row">
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
-                      Coverage
+                      Operator authority
                     </span>
                     <span className="font-mono text-[11.5px] leading-snug text-white">
-                      Grants · Procurement · Accelerators · Export · Dev-finance
+                      Pause / override retained
                     </span>
                   </div>
                   <div className="rg-status-row">
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
-                      Beachhead
+                      Second product
                     </span>
                     <span className="font-mono text-[11.5px] leading-snug text-white">
-                      Nigeria-first, architected for Africa-scale
+                      OpportunityGrid — opportunity access
                     </span>
                   </div>
                 </div>
@@ -216,12 +232,146 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Problem */}
+      {/* Two-product showcase — CityOS leads, OpportunityGrid second */}
+      <section className="border-b border-[var(--color-line)]">
+        <div className="rg-container py-20">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+            The RoyalGrid portfolio
+          </p>
+          <h2 className="font-serif mt-4 max-w-2xl text-2xl text-[var(--color-ink)] md:text-3xl">
+            Two products, one operating model: verified signal, structured action.
+          </h2>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-12">
+            {/* CityOS — lead product, larger card */}
+            <div className="rg-card flex flex-col justify-between p-8 md:col-span-7">
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-gold-soft)]">
+                    Lead product
+                  </span>
+                  <span className="rg-index-tag">Flood & water-risk governance</span>
+                </div>
+                <h3 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">CityOS</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)] md:text-base">
+                  A predictive flood and water-risk governance console. It simulates monitored
+                  city zones, scores flood risk from rainfall and river-level telemetry, and
+                  auto-actuates pumps and barriers before a threshold is crossed — with an
+                  operator retaining pause/override authority and every action logged to an
+                  immutable audit trail.
+                </p>
+                <p className="mt-4 text-xs font-medium italic text-[var(--color-gold-soft)]">
+                  Deployed proof-of-concept — a working autonomous governance loop, not a
+                  multi-city production deployment
+                </p>
+                <p className="rg-diagnostic-line">
+                  Supabase pg_cron tick loop // 60-second orchestration cycle
+                </p>
+              </div>
+              <a
+                href="https://cityos-source.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rg-btn-primary rg-ripple mt-6 inline-flex w-fit"
+              >
+                Open CityOS &rarr;
+              </a>
+            </div>
+
+            {/* OpportunityGrid — second-listed product */}
+            <div className="rg-card flex flex-col justify-between p-8 md:col-span-5">
+              <div>
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-purple)]">
+                    Second product
+                  </span>
+                  <span className="rg-index-tag">Opportunity-access infrastructure</span>
+                </div>
+                <h3 className="font-serif mt-4 text-2xl text-[var(--color-ink)]">OpportunityGrid</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
+                  OpportunityGrid discovers, verifies, and structures funding, procurement,
+                  accelerator, export, and development-finance opportunities for African
+                  businesses, then matches each one against a business&rsquo;s real profile through
+                  a Discover → Verify → Match → Qualify → Prepare → Track pipeline — turning a
+                  scattered, unverifiable landscape into a working opportunity queue.
+                </p>
+                <p className="mt-4 text-xs font-medium italic text-[var(--color-purple-soft)]">
+                  In active development — a live, working pipeline running on one connected data
+                  source, not a claim of nationwide coverage or a fixed customer count
+                </p>
+                <p className="rg-diagnostic-line">
+                  6-stage pipeline // 1 connected data source (Nigerian government)
+                </p>
+              </div>
+              <a
+                href="https://opportunitygrid.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rg-btn-primary rg-ripple mt-6 inline-flex w-fit"
+              >
+                Explore OpportunityGrid &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How CityOS works — governance loop */}
+      <section className="rg-royal-section rg-circuit">
+        <div className="rg-scanline" />
+        <div className="rg-container relative py-20">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+            How CityOS works
+          </p>
+          <h2 className="font-serif mt-4 max-w-2xl text-2xl text-white md:text-3xl">
+            An autonomous governance loop, with a human always able to stop it.
+          </h2>
+
+          <div className="relative mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+            <div
+              className="pointer-events-none absolute left-0 right-0 top-6 hidden lg:block"
+              style={{ height: 2, background: "linear-gradient(90deg, transparent, var(--color-gold) 10%, var(--color-gold) 90%, transparent)" }}
+              aria-hidden
+            />
+            {CITYOS_LOOP.map((s, i) => (
+              <div key={s.step} className="relative flex flex-col items-center text-center">
+                <div className={i === 0 ? "rg-ping relative" : "relative"}>
+                  <div
+                    className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-mono text-sm font-semibold"
+                    style={{
+                      background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
+                      color: "var(--color-purple-deep)",
+                      boxShadow: "0 0 0 6px rgba(3,6,10,1), 0 0 24px rgba(34,211,238,0.55)",
+                    }}
+                  >
+                    {i + 1}
+                  </div>
+                </div>
+                <span className="mt-3 text-sm font-medium text-white">{s.step}</span>
+                <span className="mt-1 font-mono text-xs leading-snug text-[var(--color-muted-on-dark)]">
+                  {s.body}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="https://cityos-source.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-14 inline-flex text-sm font-medium text-[var(--color-gold-soft)] hover:text-white"
+          >
+            Open CityOS &rarr;
+          </a>
+        </div>
+      </section>
+
+      {/* OpportunityGrid — the problem */}
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
           <div className="max-w-2xl">
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
-              The problem
+              OpportunityGrid // The problem
             </p>
             <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
               Businesses routinely miss opportunities they qualify for.
@@ -249,12 +399,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Infrastructure / model */}
+      {/* OpportunityGrid — infrastructure / model */}
       <section className="rg-royal-section rg-circuit">
         <div className="rg-scanline" />
         <div className="rg-container relative py-20">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-            The RoyalGrid infrastructure
+            OpportunityGrid // The operating model
           </p>
           <h2 className="font-serif mt-4 max-w-2xl text-2xl text-white md:text-3xl">
             One operating model, from discovery to a tracked application.
@@ -308,7 +458,7 @@ export default function HomePage() {
       <section className="border-b border-[var(--color-line)]">
         <div className="rg-container py-20">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
-            Coverage taxonomy
+            OpportunityGrid // Coverage taxonomy
           </p>
           <h2 className="font-serif mt-4 max-w-2xl text-2xl text-[var(--color-ink)] md:text-3xl">
             What OpportunityGrid is built to structure.
@@ -349,7 +499,7 @@ export default function HomePage() {
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
           <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
-            Two customer surfaces
+            OpportunityGrid // Two customer surfaces
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {USE_CASES.map((u) => (
@@ -380,13 +530,13 @@ export default function HomePage() {
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
-                Nigeria-first, Africa-scale
+                OpportunityGrid // Nigeria-first, Africa-scale
               </p>
               <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
                 Built for one market first, architected for many.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">
-                RoyalGrid begins with Nigerian grants, procurement, and development-finance
+                OpportunityGrid begins with Nigerian grants, procurement, and development-finance
                 sources, with a data model and source-adapter architecture designed for
                 multi-country expansion from day one.
               </p>
@@ -406,6 +556,7 @@ export default function HomePage() {
                   <li>— No fabricated customer counts, funding totals, or market-share figures.</li>
                   <li>— No fake press, logos, or testimonials.</li>
                   <li>— No claim that OpportunityGrid is fully live across Africa today.</li>
+                  <li>— No claim that CityOS runs in any real city or municipal deployment today.</li>
                 </ul>
               </div>
             </div>
