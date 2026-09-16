@@ -43,6 +43,34 @@ const FRAGMENTS = [
   },
 ];
 
+const COVERAGE = [
+  {
+    category: "Grants",
+    description: "Non-repayable funding from government agencies, foundations, and development programs.",
+    signal: "Issuer + deadline + eligibility criteria",
+  },
+  {
+    category: "Procurement",
+    description: "Public and institutional tenders requiring a registered, qualified supplier.",
+    signal: "Issuer + tender reference + submission deadline",
+  },
+  {
+    category: "Accelerator programs",
+    description: "Structured cohorts offering funding, mentorship, or market access over a fixed term.",
+    signal: "Program operator + cohort dates + application criteria",
+  },
+  {
+    category: "Export initiatives",
+    description: "Programs supporting cross-border trade, certification, or export finance.",
+    signal: "Issuing body + facility terms + eligibility criteria",
+  },
+  {
+    category: "Development finance",
+    description: "Concessional or blended capital from development-finance institutions.",
+    signal: "Institution + instrument type + eligibility criteria",
+  },
+];
+
 const USE_CASES = [
   {
     tag: "For Businesses",
@@ -103,21 +131,54 @@ export default function HomePage() {
             </div>
             <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
               <div className="rg-glass rg-hud-frame p-6">
-                <div className="flex items-center gap-2">
-                  <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
-                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-                    System status
-                  </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
+                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+                      System status
+                    </p>
+                  </div>
+                  <span
+                    className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-muted-on-dark)]"
+                    style={{ border: "1px solid rgba(201,162,74,0.3)", padding: "2px 6px", borderRadius: "3px" }}
+                  >
+                    Building
+                  </span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-white">
-                  Discover&nbsp;→&nbsp;Verify&nbsp;→&nbsp;Match&nbsp;→&nbsp;Qualify&nbsp;→&nbsp;Prepare&nbsp;→&nbsp;Track
-                  runs end to end today, with one real Nigerian government data source connected.
-                </p>
-                <div className="mt-4 h-px" style={{ background: "rgba(201,162,74,0.25)" }} />
-                <p className="mt-4 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-                  Beachhead
-                </p>
-                <p className="mt-2 text-sm text-[var(--color-muted-on-dark)]">Nigeria-first, architected for Africa-scale.</p>
+                <div className="mt-4">
+                  <div className="rg-status-row">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
+                      Pipeline
+                    </span>
+                    <span className="font-mono text-[11.5px] leading-snug text-white">
+                      Discover→Verify→Match→Qualify→Prepare→Track
+                    </span>
+                  </div>
+                  <div className="rg-status-row">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
+                      Sources connected
+                    </span>
+                    <span className="font-mono text-[11.5px] leading-snug text-white">
+                      1 — Nigerian government data source
+                    </span>
+                  </div>
+                  <div className="rg-status-row">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
+                      Coverage
+                    </span>
+                    <span className="font-mono text-[11.5px] leading-snug text-white">
+                      Grants · Procurement · Accelerators · Export · Dev-finance
+                    </span>
+                  </div>
+                  <div className="rg-status-row">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
+                      Beachhead
+                    </span>
+                    <span className="font-mono text-[11.5px] leading-snug text-white">
+                      Nigeria-first, architected for Africa-scale
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -205,6 +266,44 @@ export default function HomePage() {
           >
             See the full platform architecture &rarr;
           </Link>
+        </div>
+      </section>
+
+      {/* Coverage taxonomy */}
+      <section className="border-b border-[var(--color-line)]">
+        <div className="rg-container py-20">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
+            Coverage taxonomy
+          </p>
+          <h2 className="font-serif mt-4 max-w-2xl text-2xl text-[var(--color-ink)] md:text-3xl">
+            What OpportunityGrid is built to structure.
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--color-muted)]">
+            Five categories of opportunity, each defined by a real issuer and a real deadline —
+            this describes the system&rsquo;s taxonomy, not a count of live transactions.
+          </p>
+          <div className="rg-card mt-10 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="rg-term-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Typical verification signal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COVERAGE.map((c) => (
+                    <tr key={c.category}>
+                      <td className="font-medium whitespace-nowrap text-[var(--color-ink)]">{c.category}</td>
+                      <td className="text-[var(--color-muted)]">{c.description}</td>
+                      <td className="whitespace-nowrap text-[var(--color-gold-soft)]">{c.signal}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 

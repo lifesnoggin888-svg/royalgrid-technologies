@@ -49,7 +49,24 @@ export default function CompanyPage() {
             <h2 className="font-serif mt-3 text-lg font-medium text-[var(--color-ink)] md:text-xl">
               Legal facts
             </h2>
-            <div className="rg-card mt-6 overflow-hidden">
+            <div className="rg-ledger mt-6">
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-good)]" />
+                Registry: NG business name 9843389
+              </span>
+              <span className="rg-ledger-sep" />
+              <span>Independent entity — no parent company</span>
+            </div>
+            <div className="rg-card mt-3 overflow-hidden">
+              <div className="flex items-center justify-between border-b border-[var(--color-line)] bg-[var(--color-paper)] px-6 py-3">
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-muted)]">
+                  Governance parameter
+                </span>
+                <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-good)]">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-good)]" />
+                  Active
+                </span>
+              </div>
               <dl className="divide-y divide-[var(--color-line)] text-sm">
                 <div className="flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
                   <dt className="font-mono text-xs uppercase tracking-[0.12em] text-[var(--color-muted)]">

@@ -434,6 +434,96 @@ body {
 }
 
 /* -------------------------------------------------------------------- */
+/* Terminal-density system — ledger strips, status rows, data tables     */
+/* (Stitch-style dense infrastructure panels, honest content only)       */
+/* -------------------------------------------------------------------- */
+
+.rg-ledger {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sharp);
+  background: var(--color-paper-dim);
+  padding: 0.7rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.rg-ledger-sep {
+  width: 1px;
+  height: 12px;
+  background: var(--color-line);
+  flex-shrink: 0;
+}
+
+.rg-status-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(201, 162, 74, 0.15);
+}
+
+.rg-status-row:last-child {
+  border-bottom: none;
+}
+
+.rg-term-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.rg-term-table th {
+  text-align: left;
+  padding: 0.7rem 1.1rem;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 500;
+  background: var(--color-paper-dim);
+  border-bottom: 1px solid var(--color-line);
+  white-space: nowrap;
+}
+
+.rg-term-table td {
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--color-line);
+  vertical-align: top;
+}
+
+.rg-term-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rg-term-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.rg-term-table tbody tr:hover {
+  background: color-mix(in srgb, var(--color-paper-dim) 88%, var(--color-gold) 12%);
+}
+
+/* Slow breathing glow behind the hero graphic's hub node. */
+@keyframes rg-node-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.rg-node-pulse {
+  animation: rg-node-pulse 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* -------------------------------------------------------------------- */
 /* Alive motion — staggered reveal, water-ripple buttons, floating nodes */
 /* -------------------------------------------------------------------- */
 
@@ -513,7 +603,8 @@ body {
   .rg-scanline::after,
   .rg-ping::before,
   .rg-ping::after,
-  .rg-live-dot {
+  .rg-live-dot,
+  .rg-node-pulse {
     animation: none;
   }
   .rg-card:hover,
