@@ -21,7 +21,8 @@ export default function PageHero({
             alt="RoyalGrid Technologies"
             width={352}
             height={192}
-            className="rg-reveal mb-6 h-auto w-40 object-contain"
+            priority
+            className="rg-reveal mb-8 h-auto w-64 object-contain sm:w-80 md:w-96"
           />
         )}
         <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">

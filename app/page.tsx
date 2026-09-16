@@ -79,7 +79,7 @@ export default function HomePage() {
               width={352}
               height={192}
               priority
-              className="rg-reveal rg-reveal-1 mb-6 h-auto w-56 object-contain sm:w-64"
+              className="rg-reveal rg-reveal-1 mb-6 h-auto w-64 object-contain sm:w-80"
             />
             <span className="rg-reveal rg-reveal-1 rg-badge-gold inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
               Registered with CAC &middot; Business Name No. 9843389
