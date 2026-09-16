@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import NetworkGraphic from "@/components/NetworkGraphic";
 
@@ -73,14 +72,6 @@ export default function HomePage() {
         <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
         <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
-            <Image
-              src="/logo-hero.png"
-              alt="RoyalGrid Technologies"
-              width={352}
-              height={192}
-              priority
-              className="rg-reveal rg-reveal-1 mb-6 h-auto w-64 object-contain sm:w-80"
-            />
             <span className="rg-reveal rg-reveal-1 rg-badge-gold inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
               Registered with CAC &middot; Business Name No. 9843389
             </span>

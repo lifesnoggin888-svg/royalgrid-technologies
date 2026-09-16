@@ -14,7 +14,6 @@ export default function CompanyPage() {
         eyebrow="Company"
         title="RoyalGrid Technologies"
         body="An independent Nigerian venture building the opportunity-access infrastructure for African businesses."
-        logo
       />
 
       <section className="border-b border-[var(--color-line)]">
