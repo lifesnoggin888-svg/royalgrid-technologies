@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import NetworkGraphic from "@/components/NetworkGraphic";
 
 const FRAGMENTS = [
   {
@@ -121,8 +120,8 @@ export default function HomePage() {
           <p className="rg-reveal font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
             Opportunity-access infrastructure // Nigeria-first
           </p>
-          <div className="mt-8 grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-8">
+          <div className="mt-8 grid min-w-0 grid-cols-1 gap-10 md:grid-cols-12">
+            <div className="min-w-0 md:col-span-8">
               <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.08] font-semibold text-white md:text-6xl">
                 <span className="rg-metallic-dark">Opportunity</span> should not depend on
                 knowing where to look.
@@ -161,7 +160,7 @@ export default function HomePage() {
                 </span>
               </div>
             </div>
-            <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
+            <div className="rg-reveal rg-reveal-4 min-w-0 md:col-span-4 md:pt-2">
               <div className="rg-glass rg-hud-frame p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
