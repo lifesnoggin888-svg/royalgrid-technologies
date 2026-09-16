@@ -66,57 +66,59 @@ export default function HomePage() {
         className="relative overflow-hidden border-b border-[var(--color-line)]"
         style={{
           background:
-            "radial-gradient(1200px 480px at 15% -10%, rgba(108,63,201,0.16), transparent), radial-gradient(900px 400px at 100% 0%, rgba(201,162,74,0.14), transparent), var(--color-paper)",
+            "radial-gradient(1200px 480px at 15% -10%, rgba(91,47,168,0.16), transparent), radial-gradient(900px 400px at 100% 0%, rgba(201,162,74,0.12), transparent), var(--color-paper)",
         }}
       >
         <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
-        <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
-          <div className="md:col-span-8">
-            <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
-              <span className="rg-metallic">Opportunity</span> should not depend on knowing
-              where to look.
-            </h1>
-            <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
-              African businesses operate across a fragmented landscape of grants, procurement,
-              accelerators, supplier programs, export initiatives, and development-finance
-              opportunities. RoyalGrid Technologies is building the infrastructure that
-              discovers, verifies, and organizes those opportunities — then helps businesses
-              determine what they qualify for and what they need to act.
-            </p>
-            <div className="rg-reveal rg-reveal-4 mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://opportunitygrid.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rg-btn-primary rg-ripple"
-              >
-                Explore OpportunityGrid
-              </a>
-              <Link
-                href="/how-it-works"
-                className="inline-flex items-center justify-center rounded-sm border border-[var(--color-gold)] px-6 py-3 text-sm font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-gold)]/10"
-              >
-                How It Works
-              </Link>
-            </div>
-          </div>
-          <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
-            <div className="rg-glass rg-hud-frame p-6">
-              <div className="flex items-center gap-2">
-                <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-                  System status — live
-                </p>
+        <div className="rg-container relative py-20 md:py-28">
+          <p className="rg-reveal font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
+            Opportunity-access infrastructure // Nigeria-first
+          </p>
+          <div className="mt-8 grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-8">
+              <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.08] font-semibold text-[var(--color-ink)] md:text-6xl">
+                <span className="rg-metallic">Opportunity</span> should not depend on knowing
+                where to look.
+              </h1>
+              <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+                African businesses operate across a fragmented landscape of grants, procurement,
+                accelerators, supplier programs, export initiatives, and development-finance
+                opportunities. RoyalGrid Technologies is building the infrastructure that
+                discovers, verifies, and organizes those opportunities — then helps businesses
+                determine what they qualify for and what they need to act.
+              </p>
+              <div className="rg-reveal rg-reveal-4 mt-9 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="https://opportunitygrid.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rg-btn-primary rg-ripple"
+                >
+                  Explore OpportunityGrid
+                </a>
+                <Link href="/how-it-works" className="rg-btn-ghost-dark">
+                  How It Works
+                </Link>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-white">
-                Discover&nbsp;→&nbsp;Verify&nbsp;→&nbsp;Match&nbsp;→&nbsp;Qualify&nbsp;→&nbsp;Prepare&nbsp;→&nbsp;Track
-                runs end to end today, with one real Nigerian government data source connected.
-              </p>
-              <div className="mt-4 h-px" style={{ background: "rgba(201,162,74,0.25)" }} />
-              <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
-                Beachhead
-              </p>
-              <p className="mt-2 text-sm text-[var(--color-muted-on-dark)]">Nigeria-first, architected for Africa-scale.</p>
+            </div>
+            <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
+              <div className="rg-glass rg-hud-frame p-6">
+                <div className="flex items-center gap-2">
+                  <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
+                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+                    System status
+                  </p>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-white">
+                  Discover&nbsp;→&nbsp;Verify&nbsp;→&nbsp;Match&nbsp;→&nbsp;Qualify&nbsp;→&nbsp;Prepare&nbsp;→&nbsp;Track
+                  runs end to end today, with one real Nigerian government data source connected.
+                </p>
+                <div className="mt-4 h-px" style={{ background: "rgba(201,162,74,0.25)" }} />
+                <p className="mt-4 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
+                  Beachhead
+                </p>
+                <p className="mt-2 text-sm text-[var(--color-muted-on-dark)]">Nigeria-first, architected for Africa-scale.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +128,7 @@ export default function HomePage() {
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
+            <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
               The problem
             </p>
             <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
@@ -155,7 +157,7 @@ export default function HomePage() {
       <section className="rg-royal-section rg-circuit">
         <div className="rg-scanline" />
         <div className="rg-container relative py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
             The RoyalGrid infrastructure
           </p>
           <h2 className="font-serif mt-4 max-w-2xl text-2xl text-white md:text-3xl">
@@ -179,7 +181,7 @@ export default function HomePage() {
               <div key={s.step} className="relative flex flex-col items-center text-center">
                 <div className={i === 0 ? "rg-ping relative" : "relative"}>
                   <div
-                    className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-serif text-sm font-semibold"
+                    className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-mono text-sm font-semibold"
                     style={{
                       background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
                       color: "var(--color-purple-deep)",
@@ -190,7 +192,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <span className="mt-3 text-sm font-medium text-white">{s.step}</span>
-                <span className="mt-1 text-xs leading-snug text-[var(--color-muted-on-dark)]">
+                <span className="mt-1 font-mono text-xs leading-snug text-[var(--color-muted-on-dark)]">
                   {s.body}
                 </span>
               </div>
@@ -209,7 +211,7 @@ export default function HomePage() {
       {/* Use cases */}
       <section className="border-b border-[var(--color-line)] bg-[var(--color-paper-dim)]">
         <div className="rg-container py-20">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
+          <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
             Two customer surfaces
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -240,7 +242,7 @@ export default function HomePage() {
         <div className="rg-container py-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-purple)]">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-purple-soft)]">
                 Nigeria-first, Africa-scale
               </p>
               <h2 className="font-serif mt-4 text-2xl text-[var(--color-ink)] md:text-3xl">
@@ -259,8 +261,8 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="md:col-span-7">
-              <div className="rounded-sm border border-[var(--color-line)] p-8">
-                <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-muted)]">
+              <div className="border border-[var(--color-line)] p-8" style={{ borderRadius: "var(--radius-sharp)" }}>
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-muted)]">
                   What this site does not claim
                 </p>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-ink)]">

@@ -25,7 +25,7 @@ export default function PageHero({
             className="rg-reveal mb-8 h-auto w-64 object-contain sm:w-80 md:w-96"
           />
         )}
-        <p className="rg-reveal rg-reveal-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-gold-soft)]">
+        <p className="rg-reveal rg-reveal-1 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
           {eyebrow}
         </p>
         <h1 className="rg-reveal rg-reveal-2 font-serif mt-4 max-w-3xl text-3xl leading-[1.15] text-white md:text-5xl">

@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { Orbitron, Chakra_Petch, Manrope } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ClickSound from "@/components/ClickSound";
 import "./globals.css";
 
-const orbitron = Orbitron({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-rg-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700"],
 });
 
-const chakraPetch = Chakra_Petch({
+const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-rg-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const manrope = Manrope({
-  variable: "--font-rg-nav",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-rg-mono",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
+
 
 const siteUrl = "https://royalgrid-technologies.vercel.app";
 
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0e1512",
+  themeColor: "#0d0a14",
 };
 
 export default function RootLayout({
@@ -72,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${chakraPetch.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
         <ClickSound />
         <SiteHeader />
