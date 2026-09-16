@@ -122,8 +122,8 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <a href="https://opportunitygrid.vercel.app" target="_blank" rel="noopener noreferrer" className="rg-btn-primary">
-            Explore OpportunityGrid
+          <a href="https://cityos-source.vercel.app" target="_blank" rel="noopener noreferrer" className="rg-btn-primary">
+            Open CityOS
           </a>
         </div>
 
@@ -187,13 +187,13 @@ export default function SiteHeader() {
               </Link>
             ))}
             <a
-              href="https://opportunitygrid.vercel.app"
+              href="https://cityos-source.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="rg-btn-primary mt-4 w-full"
             >
-              Explore OpportunityGrid
+              Open CityOS
             </a>
           </nav>
         </div>

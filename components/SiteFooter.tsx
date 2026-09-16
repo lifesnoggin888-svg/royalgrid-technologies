@@ -6,6 +6,7 @@ const COLUMNS = [
     title: "Platform",
     links: [
       { href: "/platform", label: "Platform Overview" },
+      { href: "https://cityos-source.vercel.app", label: "Open CityOS", external: true },
       { href: "https://opportunitygrid.vercel.app", label: "Launch OpportunityGrid", external: true },
       { href: "/how-it-works", label: "How It Works" },
       { href: "/markets", label: "Markets" },

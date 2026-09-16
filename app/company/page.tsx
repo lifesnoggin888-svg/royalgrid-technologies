@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Company",
   description:
-    "RoyalGrid Technologies is building the opportunity-access infrastructure for African businesses. Corporate and legal facts.",
+    "RoyalGrid Technologies builds CityOS, a flood and water-risk governance console, and OpportunityGrid, opportunity-access infrastructure for African businesses. Corporate and legal facts.",
 };
 
 export default function CompanyPage() {
@@ -13,7 +13,7 @@ export default function CompanyPage() {
       <PageHero
         eyebrow="Company"
         title="RoyalGrid Technologies"
-        body="An independent Nigerian venture building the opportunity-access infrastructure for African businesses."
+        body="An independent Nigerian venture building governance and opportunity-access infrastructure — CityOS and OpportunityGrid."
       />
 
       <section className="border-b border-[var(--color-line)]">
@@ -23,18 +23,21 @@ export default function CompanyPage() {
               Thesis
             </p>
             <h2 className="font-serif mt-3 text-lg font-medium text-[var(--color-ink)] md:text-xl">
-              An opportunity-access infrastructure company
+              A governance and opportunity-access infrastructure company
             </h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-muted)]">
-              RoyalGrid Technologies is building the opportunity-access infrastructure for
-              African businesses — turning fragmented funding, procurement, accelerator,
-              export, supplier, and development-finance opportunities into a verified,
-              structured, and actionable opportunity network.
+              RoyalGrid Technologies builds infrastructure that turns fragmented, hard-to-verify
+              signal into structured, actionable systems — for the risk an operator must govern
+              in real time, and for the opportunity a business must find, verify, and act on.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-muted)]">
-              Its flagship platform, OpportunityGrid, runs a discover, verify, match, qualify,
-              prepare, and track pipeline so that businesses and the institutions that support
-              them can act on opportunity, rather than search for it.
+              Its lead product, CityOS, is a predictive flood and water-risk governance console
+              that scores risk from rainfall and river-level telemetry and auto-actuates pumps
+              and barriers before a threshold is crossed, with an operator retaining
+              pause/override authority. Its second product, OpportunityGrid, runs a discover,
+              verify, match, qualify, prepare, and track pipeline so that African businesses and
+              the institutions that support them can act on opportunity, rather than search for
+              it.
             </p>
           </div>
         </div>
