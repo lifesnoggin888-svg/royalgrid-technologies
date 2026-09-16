@@ -101,7 +101,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-[var(--color-muted-on-dark)]">
-            &copy; {year} RoyalGrid Technologies. Nigerian Business Name Registration No. 9843389.
+            &copy; {year} RoyalGrid Technologies. All rights reserved.
           </p>
           <p className="text-xs text-[var(--color-muted-on-dark)]">
             Lagos, Nigeria — building for Africa.

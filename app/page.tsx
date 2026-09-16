@@ -72,10 +72,7 @@ export default function HomePage() {
         <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
         <div className="rg-container relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-8">
-            <span className="rg-reveal rg-reveal-1 rg-badge-gold inline-flex items-center rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-wider">
-              Registered with CAC &middot; Business Name No. 9843389
-            </span>
-            <h1 className="rg-reveal rg-reveal-2 font-serif mt-5 text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
+            <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.1] text-[var(--color-ink)] md:text-6xl">
               <span className="rg-metallic">Opportunity</span> should not depend on knowing
               where to look.
             </h1>

@@ -48,17 +48,9 @@ export default function CompanyPage() {
                 <dt className="text-[var(--color-muted)]">Registration type</dt>
                 <dd className="font-medium text-[var(--color-ink)]">Nigerian Business Name</dd>
               </div>
-              <div className="flex flex-col gap-1 border-b border-[var(--color-line)] pb-5 sm:flex-row sm:justify-between">
+              <div className="flex flex-col gap-1 sm:flex-row sm:justify-between">
                 <dt className="text-[var(--color-muted)]">Registration number</dt>
                 <dd className="font-medium text-[var(--color-ink)]">9843389</dd>
-              </div>
-              <div className="flex flex-col gap-1 sm:flex-row sm:justify-between">
-                <dt className="text-[var(--color-muted)]">Note</dt>
-                <dd className="max-w-sm text-[var(--color-ink)]">
-                  RoyalGrid Technologies is a registered Business Name. It is not currently
-                  described as a limited company (&quot;Limited&quot; or &quot;Ltd&quot;) or
-                  corporation on this site, pending proof of incorporation.
-                </dd>
               </div>
             </dl>
           </div>
