@@ -150,8 +150,8 @@ export default function HomePage() {
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)]">
                       Pipeline
                     </span>
-                    <span className="font-mono text-[11.5px] leading-snug text-white">
-                      Discover→Verify→Match→Qualify→Prepare→Track
+                    <span className="font-mono text-[11.5px] leading-snug text-white break-words">
+                      Discover → Verify → Match → Qualify → Prepare → Track
                     </span>
                   </div>
                   <div className="rg-status-row">
