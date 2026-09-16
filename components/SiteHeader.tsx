@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const NAV = [
   { href: "/platform", label: "Platform" },
+  { href: "/products", label: "Products" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/markets", label: "Markets" },
   { href: "/company", label: "Company" },
@@ -44,7 +45,7 @@ export default function SiteHeader() {
         </Link>
 
         <nav className="hidden lg:flex flex-1 items-center gap-6 xl:gap-7">
-          {NAV.slice(0, 2).map((item) => {
+          {NAV.slice(0, 3).map((item) => {
             const active = pathname === item.href;
             return (
               <Link
@@ -99,7 +100,7 @@ export default function SiteHeader() {
             )}
           </div>
 
-          {NAV.slice(2).map((item) => {
+          {NAV.slice(3).map((item) => {
             const active = pathname === item.href;
             return (
               <Link
@@ -149,7 +150,7 @@ export default function SiteHeader() {
       {open && (
         <div className="lg:hidden border-t border-[rgba(201,162,74,0.25)]" style={{ background: "var(--color-void)" }}>
           <nav className="rg-container flex flex-col py-4">
-            {NAV.slice(0, 2).map((item) => (
+            {NAV.slice(0, 3).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -172,7 +173,7 @@ export default function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            {NAV.slice(2).map((item) => (
+            {NAV.slice(3).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
