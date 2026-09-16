@@ -575,6 +575,65 @@ body {
   font-family: var(--font-nav);
 }
 
+/* -------------------------------------------------------------------- */
+/* Diagnostic-panel system — index tags, parameter rows, protocol chips  */
+/* borrowed structurally from the Stitch "RoyalGrid Infrastructure Dark" */
+/* reference screens (fabricated numbers from those screens are NOT      */
+/* ported — only the terminal/ledger typographic language is).          */
+/* -------------------------------------------------------------------- */
+
+.rg-index-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-soft);
+}
+
+.rg-index-tag::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.rg-diagnostic-line {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-line);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--color-purple-soft);
+}
+
+.rg-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sharp);
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-on-dark);
+  background: rgba(201, 162, 74, 0.04);
+}
+
+.rg-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
 /* Gentle float — a slow bob, for nodes/dots that should feel suspended
    in liquid rather than pinned to the page. */
 @keyframes rg-float {

@@ -34,6 +34,12 @@ export default function SiteFooter() {
       className="border-t border-[rgba(201,162,74,0.25)]"
       style={{ background: "linear-gradient(180deg, var(--color-void), var(--color-purple-deep))" }}
     >
+      <div className="rg-container flex items-center justify-between gap-4 border-b border-[rgba(201,162,74,0.15)] py-4">
+        <span className="rg-index-tag">RoyalGrid // Opportunity-access infrastructure</span>
+        <span className="hidden font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)] sm:inline">
+          Independent Nigerian venture
+        </span>
+      </div>
       <div className="rg-container py-14">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">

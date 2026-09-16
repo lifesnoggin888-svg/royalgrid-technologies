@@ -3,6 +3,7 @@ import NetworkGraphic from "@/components/NetworkGraphic";
 
 const FRAGMENTS = [
   {
+    signal: "Root: no shared taxonomy across issuers",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
         <path d="M4 12a8 8 0 1116 0 8 8 0 01-16 0z" />
@@ -13,6 +14,7 @@ const FRAGMENTS = [
     body: "Funding, procurement, accelerator, export, and development-finance opportunities are scattered across thousands of portals, agencies, and institutions — each with its own format, cadence, and language.",
   },
   {
+    signal: "Root: no consistent issuer, date, or evidence",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
         <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
@@ -23,6 +25,7 @@ const FRAGMENTS = [
     body: "A listing found on social media or a forwarded PDF carries no source, no issuer, no confirmed deadline. Businesses cannot tell what is current, expired, or fabricated.",
   },
   {
+    signal: "Root: eligibility text, not a structured profile match",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
         <path d="M12 3v18M7 7H3l3 7a4 4 0 006 0l3-7h-4M17 7h4l-3 7a4 4 0 01-6 0" strokeLinecap="round" strokeLinejoin="round" />
@@ -32,6 +35,7 @@ const FRAGMENTS = [
     body: "Most opportunities list requirements in dense, jurisdiction-specific language. Determining fit against a real business profile takes hours a founder does not have.",
   },
   {
+    signal: "Root: no early checklist for what to prepare",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.8">
         <rect x="5" y="4" width="14" height="17" rx="2" />
@@ -128,6 +132,19 @@ export default function HomePage() {
                   How It Works
                 </Link>
               </div>
+              <div className="rg-reveal rg-reveal-4 mt-6 flex flex-wrap gap-2.5">
+                <span className="rg-chip">
+                  <span className="rg-chip-dot" />
+                  Nigeria-first, Africa-scale
+                </span>
+                <span className="rg-chip">
+                  <span className="rg-chip-dot" />5 opportunity categories
+                </span>
+                <span className="rg-chip">
+                  <span className="rg-chip-dot" />
+                  6-stage pipeline
+                </span>
+              </div>
             </div>
             <div className="rg-reveal rg-reveal-4 md:col-span-4 md:pt-2">
               <div className="rg-glass rg-hud-frame p-6">
@@ -203,11 +220,15 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {FRAGMENTS.map((f) => (
+            {FRAGMENTS.map((f, i) => (
               <div key={f.title} className="rg-card p-7">
-                <span className="rg-badge">{f.icon}</span>
+                <div className="flex items-start justify-between">
+                  <span className="rg-badge">{f.icon}</span>
+                  <span className="rg-index-tag">Friction 0{i + 1}</span>
+                </div>
                 <h3 className="mt-4 text-base font-medium text-[var(--color-ink)]">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{f.body}</p>
+                <p className="rg-diagnostic-line">{f.signal}</p>
               </div>
             ))}
           </div>
@@ -282,19 +303,22 @@ export default function HomePage() {
             Five categories of opportunity, each defined by a real issuer and a real deadline —
             this describes the system&rsquo;s taxonomy, not a count of live transactions.
           </p>
-          <div className="rg-card mt-10 overflow-hidden">
+          <span className="mt-6 inline-flex rg-index-tag">Taxonomy // 5 categories</span>
+          <div className="rg-card mt-4 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="rg-term-table">
                 <thead>
                   <tr>
+                    <th className="w-10">#</th>
                     <th>Category</th>
                     <th>Description</th>
                     <th>Typical verification signal</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COVERAGE.map((c) => (
+                  {COVERAGE.map((c, i) => (
                     <tr key={c.category}>
+                      <td className="text-[var(--color-muted)]">0{i + 1}</td>
                       <td className="font-medium whitespace-nowrap text-[var(--color-ink)]">{c.category}</td>
                       <td className="text-[var(--color-muted)]">{c.description}</td>
                       <td className="whitespace-nowrap text-[var(--color-gold-soft)]">{c.signal}</td>

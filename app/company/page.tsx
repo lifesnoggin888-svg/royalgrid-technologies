@@ -49,7 +49,8 @@ export default function CompanyPage() {
             <h2 className="font-serif mt-3 text-lg font-medium text-[var(--color-ink)] md:text-xl">
               Legal facts
             </h2>
-            <div className="rg-ledger mt-6">
+            <span className="mt-4 inline-flex rg-index-tag">Registry // NG business name</span>
+            <div className="rg-ledger mt-3">
               <span className="flex items-center gap-1.5">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-good)]" />
                 Registry: NG business name 9843389
@@ -98,6 +99,7 @@ export default function CompanyPage() {
             <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
               Independence
             </p>
+            <span className="mt-3 inline-flex rg-index-tag">Governance // no parent company</span>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-muted)]">
               RoyalGrid Technologies operates as an independent venture. It is not a subsidiary,
               division, or product line of any other company, and does not share branding,
