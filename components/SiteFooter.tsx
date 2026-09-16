@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const COLUMNS = [
@@ -31,10 +32,10 @@ export default function SiteFooter() {
 
   return (
     <footer
-      className="border-t border-[rgba(201,162,74,0.25)]"
+      className="border-t border-[rgba(34,211,238,0.25)]"
       style={{ background: "linear-gradient(180deg, var(--color-void), var(--color-purple-deep))" }}
     >
-      <div className="rg-container flex items-center justify-between gap-4 border-b border-[rgba(201,162,74,0.15)] py-4">
+      <div className="rg-container flex items-center justify-between gap-4 border-b border-[rgba(34,211,238,0.15)] py-4">
         <span className="rg-index-tag">RoyalGrid // Opportunity-access infrastructure</span>
         <span className="hidden font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted-on-dark)] sm:inline">
           Independent Nigerian venture
@@ -43,8 +44,11 @@ export default function SiteFooter() {
       <div className="rg-container py-14">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <span className="font-serif text-lg text-white">
-              RoyalGrid <span className="rg-metallic-dark">Technologies</span>
+            <span className="flex items-center gap-2.5">
+              <Image src="/logo-mark.png" alt="" width={568} height={562} className="h-7 w-7 object-contain" aria-hidden />
+              <span className="font-serif text-lg text-white">
+                RoyalGrid <span className="rg-metallic-dark">Technologies</span>
+              </span>
             </span>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-muted-on-dark)]">
               Opportunity-access infrastructure for African businesses.
@@ -103,7 +107,7 @@ export default function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 mb-6 h-px" style={{ background: "rgba(201,162,74,0.2)" }} />
+        <div className="mt-12 mb-6 h-px" style={{ background: "rgba(34,211,238,0.2)" }} />
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-[var(--color-muted-on-dark)]">

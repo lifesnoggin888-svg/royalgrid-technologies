@@ -12,17 +12,30 @@ export default function PageHero({
   logo?: boolean;
 }) {
   return (
-    <section className="rg-royal-section rg-circuit">
+    <section className="relative overflow-hidden border-b border-[var(--color-line)]">
+      {/* Same cinematic poster used on the homepage hero, scaled down to a
+          page-banner treatment: darkened + gradient-overlaid so it reads as
+          part of the same visual system rather than a leftover flat panel. */}
+      <div className="absolute inset-0" aria-hidden>
+        <Image src="/hero-poster.jpg" alt="" fill sizes="100vw" className="object-cover object-[center_20%]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(3,6,10,0.95) 0%, rgba(3,6,10,0.88) 38%, rgba(3,6,10,0.62) 70%, rgba(3,6,10,0.42) 100%), linear-gradient(0deg, rgba(3,6,10,0.85) 0%, transparent 60%)",
+          }}
+        />
+      </div>
       <div className="rg-scanline" />
       <div className="rg-container relative py-16 md:py-24">
         {logo && (
           <Image
-            src="/logo-hero.png"
+            src="/logo-mark.png"
             alt="RoyalGrid Technologies"
-            width={352}
-            height={192}
+            width={568}
+            height={562}
             priority
-            className="rg-reveal mb-8 h-auto w-64 object-contain sm:w-80 md:w-96"
+            className="rg-reveal mb-7 h-16 w-16 object-contain md:h-20 md:w-20"
           />
         )}
         <p className="rg-reveal rg-reveal-1 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">

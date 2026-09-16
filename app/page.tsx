@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import NetworkGraphic from "@/components/NetworkGraphic";
 
@@ -93,26 +94,40 @@ const USE_CASES = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden border-b border-[var(--color-line)]"
-        style={{
-          background:
-            "radial-gradient(1200px 480px at 15% -10%, rgba(91,47,168,0.16), transparent), radial-gradient(900px 400px at 100% 0%, rgba(201,162,74,0.12), transparent), var(--color-paper)",
-        }}
-      >
-        <NetworkGraphic className="pointer-events-none absolute -right-10 top-8 hidden h-auto w-[420px] lg:block" />
-        <div className="rg-container relative py-20 md:py-28">
+      {/* Hero — full-bleed cinematic poster background */}
+      <section className="relative overflow-hidden border-b border-[var(--color-line)]">
+        <div className="absolute inset-0" aria-hidden>
+          <Image
+            src="/hero-poster.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Darken + gradient the poster so headline/subhead/CTA stay
+              readable at full contrast — left-to-right and bottom-up, not a
+              flat scrim slapped over the image. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(105deg, rgba(3,6,10,0.96) 0%, rgba(3,6,10,0.86) 32%, rgba(3,6,10,0.55) 58%, rgba(3,6,10,0.32) 100%), linear-gradient(0deg, rgba(3,6,10,0.92) 0%, rgba(3,6,10,0.15) 42%, transparent 70%)",
+            }}
+          />
+        </div>
+
+        <div className="rg-container relative py-24 md:py-36">
           <p className="rg-reveal font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
             Opportunity-access infrastructure // Nigeria-first
           </p>
           <div className="mt-8 grid gap-10 md:grid-cols-12">
             <div className="md:col-span-8">
-              <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.08] font-semibold text-[var(--color-ink)] md:text-6xl">
-                <span className="rg-metallic">Opportunity</span> should not depend on knowing
-                where to look.
+              <h1 className="rg-reveal rg-reveal-1 font-serif text-4xl leading-[1.08] font-semibold text-white md:text-6xl">
+                <span className="rg-metallic-dark">Opportunity</span> should not depend on
+                knowing where to look.
               </h1>
-              <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+              <p className="rg-reveal rg-reveal-3 mt-6 max-w-xl text-base leading-relaxed text-[var(--color-muted-on-dark)] md:text-lg">
                 African businesses operate across a fragmented landscape of grants, procurement,
                 accelerators, supplier programs, export initiatives, and development-finance
                 opportunities. RoyalGrid Technologies is building the infrastructure that
@@ -150,14 +165,14 @@ export default function HomePage() {
               <div className="rg-glass rg-hud-frame p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="rg-ping relative inline-block h-2 w-2 rounded-full bg-[#4ade80]" />
+                    <span className="rg-ping relative inline-block h-2 w-2 rounded-full" style={{ background: "var(--color-good)" }} />
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-gold-soft)]">
                       System status
                     </p>
                   </div>
                   <span
                     className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-muted-on-dark)]"
-                    style={{ border: "1px solid rgba(201,162,74,0.3)", padding: "2px 6px", borderRadius: "3px" }}
+                    style={{ border: "1px solid rgba(34,211,238,0.3)", padding: "2px 6px", borderRadius: "3px" }}
                   >
                     Building
                   </span>
@@ -267,7 +282,7 @@ export default function HomePage() {
                     style={{
                       background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
                       color: "var(--color-purple-deep)",
-                      boxShadow: "0 0 0 6px rgba(10,6,18,1), 0 0 24px rgba(201,162,74,0.55)",
+                      boxShadow: "0 0 0 6px rgba(3,6,10,1), 0 0 24px rgba(34,211,238,0.55)",
                     }}
                   >
                     {i + 1}

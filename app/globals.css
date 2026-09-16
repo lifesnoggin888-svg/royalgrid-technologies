@@ -4,27 +4,32 @@
   /* Fixed, theme-independent dark surface — used by components (header,
      footer, HUD bands) that must always render as the darkest layer,
      regardless of what --color-ink/--color-paper mean below. */
-  --color-void: #08050d;
-  --color-void-soft: #120d1c;
+  --color-void: #03060a;
+  --color-void-soft: #0a1119;
 
   /* Dark-theme site base: --color-ink is the default TEXT color,
      --color-paper is the default BACKGROUND color — RoyalGrid runs dark
-     by default, so ink is light and paper is deep aubergine (Stitch
-     "RoyalGrid Infrastructure Dark" direction). */
-  --color-ink: #f3f0ec;
-  --color-ink-soft: #d8d1e8;
-  --color-paper: #0d0a14;
-  --color-paper-dim: #16111f;
-  --color-line: #2a2338;
-  --color-purple: #5b2fa8;
-  --color-purple-deep: #1c1129;
-  --color-purple-soft: #8f78c4;
-  --color-gold: #c9a24a;
-  --color-gold-soft: #e6c874;
-  --color-clay: #7a3b2e;
-  --color-muted: #b4addc;
-  --color-muted-on-dark: #cfc7e8;
-  --color-good: #4db787;
+     by default, so ink is light and paper is near-black steel-blue.
+     2026 re-theme: sampled from the cinematic wireframe-R emblem —
+     glowing cyan ring, cool steel-blue metal, silver/white text, on a
+     dark server-room/blueprint ground. Token NAMES are kept stable
+     (--color-purple/--color-gold etc.) since ~100 call sites across the
+     site reference them; only the underlying hex values change, so the
+     re-theme cascades everywhere without a repo-wide rename. */
+  --color-ink: #eef4f7;
+  --color-ink-soft: #c9d8e0;
+  --color-paper: #05090e;
+  --color-paper-dim: #0c131b;
+  --color-line: #1c2a35;
+  --color-purple: #3d6280; /* steel-blue secondary accent (was violet) */
+  --color-purple-deep: #0b1720;
+  --color-purple-soft: #86aec8;
+  --color-gold: #22d3ee; /* cyan primary accent (was gold) — matches emblem glow */
+  --color-gold-soft: #7fe9f5;
+  --color-clay: #e0a458; /* sparing warm accent for contrast */
+  --color-muted: #93a9b7;
+  --color-muted-on-dark: #b9cdd6;
+  --color-good: #4ddba0;
   --radius-sharp: 4px;
 }
 
@@ -102,10 +107,10 @@ body {
   overflow: hidden;
   background: radial-gradient(
       1100px 520px at 12% -10%,
-      rgba(106, 84, 144, 0.35),
+      rgba(70, 110, 140, 0.35),
       transparent
     ),
-    radial-gradient(800px 420px at 100% 0%, rgba(201, 162, 74, 0.22), transparent),
+    radial-gradient(800px 420px at 100% 0%, rgba(34, 211, 238, 0.22), transparent),
     linear-gradient(160deg, var(--color-purple-deep) 0%, var(--color-void) 70%);
   color: var(--color-paper);
 }
@@ -114,7 +119,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(230, 200, 116, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(60, 220, 238, 0.18) 1px, transparent 1px);
   background-size: 28px 28px;
   opacity: 0.5;
   pointer-events: none;
@@ -132,8 +137,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(201, 162, 74, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 162, 74, 0.12) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.12) 1px, transparent 1px);
   background-size: 44px 44px;
   pointer-events: none;
 }
@@ -142,29 +147,60 @@ body {
 /* Card system — real depth, not flat boxes                              */
 /* -------------------------------------------------------------------- */
 
+/* Glass card — frosted, glossy panel: translucent tint + backdrop-blur +
+   a thin specular sheen across the top, matching the cinematic glass
+   aesthetic used in .rg-glass, tuned slightly more opaque so body copy
+   stays readable when the card sits on a flat (non-hero) background. */
 .rg-card {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius-sharp);
   border: 1px solid var(--color-line);
-  background: var(--color-paper-dim);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--color-paper-dim) 82%, white 4%),
+    color-mix(in srgb, var(--color-paper-dim) 94%, transparent)
+  );
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rg-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 24%, transparent 42%);
+  pointer-events: none;
 }
 
 .rg-card:hover {
   border-color: var(--color-gold);
-  background: color-mix(in srgb, var(--color-paper-dim) 92%, var(--color-gold) 8%);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.12), 0 12px 32px -16px rgba(34, 211, 238, 0.35);
 }
 
 .rg-card-dark {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-sharp);
-  border: 1px solid rgba(201, 162, 74, 0.3);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
-  transition: border-color 0.2s ease;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
+  backdrop-filter: blur(12px) saturate(1.15);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rg-card-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 22%, transparent 40%);
+  pointer-events: none;
 }
 
 .rg-card-dark:hover {
   border-color: var(--color-gold);
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.15), 0 12px 32px -16px rgba(34, 211, 238, 0.4);
 }
 
 .rg-badge {
@@ -183,7 +219,7 @@ body {
 
 .rg-badge-gold {
   border-color: var(--color-gold);
-  background: rgba(201, 162, 74, 0.1);
+  background: rgba(34, 211, 238, 0.1);
   color: var(--color-gold);
 }
 
@@ -243,7 +279,7 @@ body {
 }
 
 .rg-btn-ghost-dark:hover {
-  background: rgba(201, 162, 74, 0.12);
+  background: rgba(34, 211, 238, 0.12);
 }
 
 /* Metallic, faintly 3D accent text — used sparingly on a single word or
@@ -272,7 +308,7 @@ body {
     100deg,
     var(--color-gold-soft) 0%,
     var(--color-gold) 30%,
-    #fff6df 50%,
+    #eafdff 50%,
     var(--color-gold) 70%,
     var(--color-gold-soft) 100%
   );
@@ -311,8 +347,8 @@ body {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(230, 200, 116, 0.16) 45%,
-    rgba(106, 84, 144, 0.22) 55%,
+    rgba(60, 220, 238, 0.16) 45%,
+    rgba(70, 110, 140, 0.22) 55%,
     transparent
   );
   animation: rg-scan 7s linear infinite;
@@ -359,10 +395,10 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-sharp);
-  border: 1px solid rgba(230, 200, 116, 0.4);
+  border: 1px solid rgba(60, 220, 238, 0.4);
   background: linear-gradient(
     160deg,
-    rgba(91, 47, 168, 0.16),
+    rgba(61, 98, 128, 0.16),
     rgba(13, 10, 20, 0.85)
   );
   backdrop-filter: blur(16px) saturate(1.2);
@@ -428,7 +464,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #4ade80;
+  background: var(--color-good);
   box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.7);
   animation: rg-flicker 3.5s steps(1) infinite;
 }
@@ -466,7 +502,7 @@ body {
   flex-direction: column;
   gap: 0.2rem;
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(201, 162, 74, 0.15);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.15);
 }
 
 .rg-status-row:last-child {
@@ -623,7 +659,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted-on-dark);
-  background: rgba(201, 162, 74, 0.04);
+  background: rgba(34, 211, 238, 0.04);
 }
 
 .rg-chip-dot {

@@ -27,21 +27,24 @@ export default function SiteHeader() {
 
   return (
     <header
-      className="sticky top-0 z-50 border-b border-[rgba(201,162,74,0.25)] backdrop-blur"
+      className="sticky top-0 z-50 border-b border-[rgba(34,211,238,0.22)] backdrop-blur"
       style={{
-        background: "linear-gradient(180deg, rgba(10,6,18,0.97), rgba(26,12,56,0.94))",
+        background: "linear-gradient(180deg, rgba(3,6,10,0.97), rgba(10,17,25,0.94))",
       }}
     >
       <div className="rg-container flex h-16 items-center justify-between gap-8">
-        <Link href="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
           <Image
-            src="/logo-hero.png"
+            src="/logo-mark.png"
             alt="RoyalGrid Technologies"
-            width={352}
-            height={192}
+            width={568}
+            height={562}
             priority
-            className="h-12 w-auto object-contain"
+            className="h-10 w-10 object-contain"
           />
+          <span className="font-serif text-base font-medium text-white">
+            RoyalGrid <span className="rg-metallic-dark">Technologies</span>
+          </span>
         </Link>
 
         <nav className="hidden lg:flex flex-1 items-center gap-6 xl:gap-7">
@@ -90,7 +93,7 @@ export default function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-sm px-3 py-2 text-sm text-[var(--color-muted-on-dark)] hover:bg-[rgba(201,162,74,0.1)] hover:text-[var(--color-gold-soft)]"
+                    className="block rounded-sm px-3 py-2 text-sm text-[var(--color-muted-on-dark)] hover:bg-[rgba(34,211,238,0.1)] hover:text-[var(--color-gold-soft)]"
                     onClick={() => setSolutionsOpen(false)}
                   >
                     {item.label}
@@ -129,7 +132,7 @@ export default function SiteHeader() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-sm border border-[rgba(201,162,74,0.35)]"
+          className="lg:hidden flex h-10 w-10 items-center justify-center rounded-sm border border-[rgba(34,211,238,0.35)]"
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           <div className="flex flex-col gap-1.5">
@@ -148,14 +151,14 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[rgba(201,162,74,0.25)]" style={{ background: "var(--color-void)" }}>
+        <div className="lg:hidden border-t border-[rgba(34,211,238,0.25)]" style={{ background: "var(--color-void)" }}>
           <nav className="rg-container flex flex-col py-4">
             {NAV.slice(0, 3).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rg-nav-link py-3 text-base text-white border-b border-[rgba(201,162,74,0.15)]"
+                className="rg-nav-link py-3 text-base text-white border-b border-[rgba(34,211,238,0.15)]"
               >
                 {item.label}
               </Link>
@@ -168,7 +171,7 @@ export default function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rg-nav-link py-3 pl-3 text-base text-white border-b border-[rgba(201,162,74,0.15)]"
+                className="rg-nav-link py-3 pl-3 text-base text-white border-b border-[rgba(34,211,238,0.15)]"
               >
                 {item.label}
               </Link>
@@ -178,7 +181,7 @@ export default function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rg-nav-link py-3 text-base text-white border-b border-[rgba(201,162,74,0.15)] last:border-none"
+                className="rg-nav-link py-3 text-base text-white border-b border-[rgba(34,211,238,0.15)] last:border-none"
               >
                 {item.label}
               </Link>
