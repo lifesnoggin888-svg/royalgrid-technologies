@@ -11,7 +11,7 @@ const PRODUCTS = [
   {
     tag: "Lead product",
     name: "CityOS",
-    href: "https://cityos-source.vercel.app",
+    href: "https://cityos-nu.vercel.app",
     domain: "Flood & water-risk governance",
     body: "A predictive flood and water-risk governance console. It simulates monitored city zones, scores flood risk from rainfall and river-level telemetry, and auto-actuates pumps and barriers before a threshold is crossed — with an operator retaining pause/override authority and every action logged to an immutable audit trail.",
     status: "Deployed proof-of-concept — a working autonomous governance loop, not a multi-city production deployment",

@@ -145,7 +145,7 @@ export default function HomePage() {
               </p>
               <div className="rg-reveal rg-reveal-4 mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://cityos-source.vercel.app"
+                  href="https://cityos-nu.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rg-btn-primary rg-ripple"
@@ -269,7 +269,7 @@ export default function HomePage() {
                 </p>
               </div>
               <a
-                href="https://cityos-source.vercel.app"
+                href="https://cityos-nu.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rg-btn-primary rg-ripple mt-6 inline-flex w-fit"
@@ -356,7 +356,7 @@ export default function HomePage() {
           </div>
 
           <a
-            href="https://cityos-source.vercel.app"
+            href="https://cityos-nu.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-14 inline-flex text-sm font-medium text-[var(--color-gold-soft)] hover:text-white"

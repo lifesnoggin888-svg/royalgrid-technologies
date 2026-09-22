@@ -122,7 +122,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <a href="https://cityos-source.vercel.app" target="_blank" rel="noopener noreferrer" className="rg-btn-primary">
+          <a href="https://cityos-nu.vercel.app" target="_blank" rel="noopener noreferrer" className="rg-btn-primary">
             Open CityOS
           </a>
         </div>
@@ -187,7 +187,7 @@ export default function SiteHeader() {
               </Link>
             ))}
             <a
-              href="https://cityos-source.vercel.app"
+              href="https://cityos-nu.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
