@@ -4,12 +4,10 @@ export default function PageHero({
   eyebrow,
   title,
   body,
-  logo,
 }: {
   eyebrow: string;
   title: string;
   body?: string;
-  logo?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden border-b border-[var(--color-line)]">
@@ -28,16 +26,6 @@ export default function PageHero({
       </div>
       <div className="rg-scanline" />
       <div className="rg-container relative py-16 md:py-24">
-        {logo && (
-          <Image
-            src="/logo-mark.png"
-            alt="RoyalGrid Technologies"
-            width={568}
-            height={562}
-            priority
-            className="rg-reveal mb-7 h-16 w-16 object-contain md:h-20 md:w-20"
-          />
-        )}
         <p className="rg-reveal rg-reveal-1 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-gold-soft)]">
           {eyebrow}
         </p>
