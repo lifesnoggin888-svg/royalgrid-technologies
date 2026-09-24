@@ -45,8 +45,11 @@ export default function SiteFooter() {
       <div className="rg-container py-14">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <span className="font-serif text-lg text-white">
-              RoyalGrid <span className="rg-metallic-dark">Technologies</span>
+            <span className="flex items-center gap-2.5">
+              <Image src="/logo-mark.png" alt="" width={568} height={562} className="h-7 w-7 object-contain" aria-hidden />
+              <span className="font-serif text-lg text-white">
+                RoyalGrid <span className="rg-metallic-dark">Technologies</span>
+              </span>
             </span>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-muted-on-dark)]">
               Opportunity-access infrastructure for African businesses.

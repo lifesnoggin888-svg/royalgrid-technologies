@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -33,6 +34,14 @@ export default function SiteHeader() {
     >
       <div className="rg-container flex h-16 items-center justify-between gap-8">
         <Link href="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
+          <Image
+            src="/logo-mark.png"
+            alt="RoyalGrid Technologies"
+            width={568}
+            height={562}
+            priority
+            className="h-10 w-10 object-contain"
+          />
           <span className="font-serif text-base font-medium text-white">
             RoyalGrid <span className="rg-metallic-dark">Technologies</span>
           </span>
