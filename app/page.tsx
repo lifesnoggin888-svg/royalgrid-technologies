@@ -327,30 +327,23 @@ export default function HomePage() {
             An autonomous governance loop, with a human always able to stop it.
           </h2>
 
-          <div className="relative mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
-            <div
-              className="pointer-events-none absolute left-0 right-0 top-6 hidden lg:block"
-              style={{ height: 2, background: "linear-gradient(90deg, transparent, var(--color-gold) 10%, var(--color-gold) 90%, transparent)" }}
-              aria-hidden
-            />
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {CITYOS_LOOP.map((s, i) => (
-              <div key={s.step} className="relative flex flex-col items-center text-center">
-                <div className={i === 0 ? "rg-ping relative" : "relative"}>
-                  <div
-                    className="rg-hex relative z-10 flex h-12 w-12 items-center justify-center font-mono text-sm font-semibold"
-                    style={{
-                      background: "linear-gradient(135deg, var(--color-gold), var(--color-gold-soft))",
-                      color: "var(--color-purple-deep)",
-                      boxShadow: "0 0 0 6px rgba(3,6,10,1), 0 0 24px rgba(34,211,238,0.55)",
-                    }}
-                  >
+              <div
+                key={s.step}
+                className="group relative rounded-lg border border-[rgba(34,211,238,0.2)] bg-gradient-to-br from-[rgba(34,211,238,0.05)] to-[rgba(3,6,10,0.8)] p-6 transition-all hover:border-[rgba(34,211,238,0.4)] hover:from-[rgba(34,211,238,0.1)]"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-[var(--color-gold-soft)] to-[var(--color-gold)] text-xs font-bold text-[var(--color-purple-deep)]">
                     {i + 1}
                   </div>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-semibold text-white">{s.step}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-[var(--color-muted-on-dark)]">
+                      {s.body}
+                    </p>
+                  </div>
                 </div>
-                <span className="mt-3 text-sm font-medium text-white">{s.step}</span>
-                <span className="mt-1 font-mono text-xs leading-snug text-[var(--color-muted-on-dark)]">
-                  {s.body}
-                </span>
               </div>
             ))}
           </div>
