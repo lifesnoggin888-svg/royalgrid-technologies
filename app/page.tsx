@@ -538,19 +538,6 @@ export default function HomePage() {
                 View market roadmap &rarr;
               </Link>
             </div>
-            <div className="md:col-span-7">
-              <div className="border border-[var(--color-line)] p-8" style={{ borderRadius: "var(--radius-sharp)" }}>
-                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-muted)]">
-                  What this site does not claim
-                </p>
-                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-ink)]">
-                  <li>— No fabricated customer counts, funding totals, or market-share figures.</li>
-                  <li>— No fake press, logos, or testimonials.</li>
-                  <li>— No claim that OpportunityGrid is fully live across Africa today.</li>
-                  <li>— No claim that CityOS runs in any real city or municipal deployment today.</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
